@@ -1,0 +1,656 @@
+{
+  "levels": {
+    "1": {
+      "title": "Foundation Building",
+      "description": "Master the fundamental concepts of cybersecurity, networking, and security principles",
+      "total_chapters": 4,
+      "chapters": {
+        "1": {
+          "title": "Cybersecurity Fundamentals",
+          "description": "Introduction to cybersecurity concepts, threats, and the security landscape",
+          "learning_objectives": [
+            "Understand the CIA Triad (Confidentiality, Integrity, Availability)",
+            "Identify common cybersecurity threats and attack vectors",
+            "Explain the importance of defense in depth",
+            "Recognize different types of malware and their characteristics"
+          ],
+          "topics": [
+            "What is Cybersecurity?",
+            "The CIA Triad Explained",
+            "Common Threat Landscape",
+            "Types of Cyber Attacks",
+            "Malware Categories",
+            "Security Frameworks Overview"
+          ],
+          "estimated_time": "2-3 hours",
+          "quiz": {
+            "easy": {
+              "questions": 8,
+              "passing_score": 75,
+              "time_limit": 15,
+              "focus": "Basic concepts and definitions"
+            },
+            "medium": {
+              "questions": 12,
+              "passing_score": 80,
+              "time_limit": 20,
+              "focus": "Threat identification and security principles"
+            },
+            "hard": {
+              "questions": 15,
+              "passing_score": 85,
+              "time_limit": 25,
+              "focus": "Complex scenarios and threat analysis"
+            }
+          }
+        },
+        "2": {
+          "title": "Networking Essentials",
+          "description": "Understanding network protocols, architecture, and network security basics",
+          "learning_objectives": [
+            "Master the OSI and TCP/IP models",
+            "Understand IP addressing and subnetting",
+            "Identify common network protocols and their security implications",
+            "Explain network topology and architecture concepts"
+          ],
+          "topics": [
+            "OSI Model Deep Dive",
+            "TCP/IP Protocol Suite",
+            "IP Addressing and Subnetting",
+            "Network Protocols (HTTP, HTTPS, FTP, SSH)",
+            "Network Topologies",
+            "Basic Network Security Concepts"
+          ],
+          "estimated_time": "3-4 hours",
+          "quiz": {
+            "easy": {
+              "questions": 10,
+              "passing_score": 75,
+              "time_limit": 18,
+              "focus": "OSI layers and basic protocols"
+            },
+            "medium": {
+              "questions": 14,
+              "passing_score": 80,
+              "time_limit": 22,
+              "focus": "Protocol security and network architecture"
+            },
+            "hard": {
+              "questions": 18,
+              "passing_score": 85,
+              "time_limit": 28,
+              "focus": "Network troubleshooting and security analysis"
+            }
+          }
+        },
+        "3": {
+          "title": "Risk Management & Governance",
+          "description": "Learn risk assessment methodologies and security governance frameworks",
+          "learning_objectives": [
+            "Conduct basic risk assessments",
+            "Understand compliance requirements and frameworks",
+            "Explain security policies and procedures",
+            "Identify key governance principles"
+          ],
+          "topics": [
+            "Risk Management Fundamentals",
+            "Risk Assessment Methodologies",
+            "Compliance Frameworks (NIST, ISO 27001)",
+            "Security Policies and Procedures",
+            "Business Continuity Planning",
+            "Incident Response Basics"
+          ],
+          "estimated_time": "2-3 hours",
+          "quiz": {
+            "easy": {
+              "questions": 8,
+              "passing_score": 75,
+              "time_limit": 15,
+              "focus": "Risk concepts and basic frameworks"
+            },
+            "medium": {
+              "questions": 12,
+              "passing_score": 80,
+              "time_limit": 20,
+              "focus": "Risk assessment and compliance"
+            },
+            "hard": {
+              "questions": 15,
+              "passing_score": 85,
+              "time_limit": 25,
+              "focus": "Complex risk scenarios and governance"
+            }
+          }
+        },
+        "4": {
+          "title": "Security Tools & Technologies",
+          "description": "Explore essential security tools and technologies used in cybersecurity",
+          "learning_objectives": [
+            "Identify essential security tools and their purposes",
+            "Understand basic cryptography concepts",
+            "Explain authentication and authorization mechanisms",
+            "Describe security monitoring and logging"
+          ],
+          "topics": [
+            "Essential Security Tools Overview",
+            "Introduction to Cryptography",
+            "Authentication Methods",
+            "Access Control Models",
+            "Security Monitoring Tools",
+            "Log Analysis Basics"
+          ],
+          "estimated_time": "3-4 hours",
+          "quiz": {
+            "easy": {
+              "questions": 10,
+              "passing_score": 75,
+              "time_limit": 18,
+              "focus": "Tool identification and basic concepts"
+            },
+            "medium": {
+              "questions": 14,
+              "passing_score": 80,
+              "time_limit": 22,
+              "focus": "Tool applications and cryptography"
+            },
+            "hard": {
+              "questions": 18,
+              "passing_score": 85,
+              "time_limit": 28,
+              "focus": "Advanced tool usage and security implementation"
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "title": "Technical Implementation",
+      "description": "Dive deep into technical security controls, systems hardening, and defense mechanisms",
+      "total_chapters": 4,
+      "chapters": {
+        "1": {
+          "title": "System Hardening & Configuration",
+          "description": "Learn to secure operating systems, applications, and infrastructure components",
+          "learning_objectives": [
+            "Implement operating system hardening techniques",
+            "Configure secure application settings",
+            "Apply security baselines and benchmarks",
+            "Understand patch management processes"
+          ],
+          "topics": [
+            "Operating System Hardening",
+            "Windows Security Configuration",
+            "Linux Security Hardening",
+            "Application Security Settings",
+            "Security Baselines (CIS Benchmarks)",
+            "Patch Management Strategies"
+          ],
+          "estimated_time": "4-5 hours",
+          "quiz": {
+            "easy": {
+              "questions": 12,
+              "passing_score": 75,
+              "time_limit": 20,
+              "focus": "Basic hardening concepts"
+            },
+            "medium": {
+              "questions": 16,
+              "passing_score": 80,
+              "time_limit": 25,
+              "focus": "Configuration and implementation"
+            },
+            "hard": {
+              "questions": 20,
+              "passing_score": 85,
+              "time_limit": 30,
+              "focus": "Advanced hardening scenarios"
+            }
+          }
+        },
+        "2": {
+          "title": "Network Security Controls",
+          "description": "Master firewall configuration, intrusion detection, and network segmentation",
+          "learning_objectives": [
+            "Configure and manage firewall rules",
+            "Implement intrusion detection and prevention systems",
+            "Design secure network architectures",
+            "Apply network segmentation strategies"
+          ],
+          "topics": [
+            "Firewall Technologies",
+            "IDS/IPS Implementation",
+            "Network Access Control (NAC)",
+            "VPN Configuration",
+            "Network Segmentation",
+            "DMZ Design and Implementation"
+          ],
+          "estimated_time": "4-5 hours",
+          "quiz": {
+            "easy": {
+              "questions": 12,
+              "passing_score": 75,
+              "time_limit": 20,
+              "focus": "Basic network security concepts"
+            },
+            "medium": {
+              "questions": 16,
+              "passing_score": 80,
+              "time_limit": 25,
+              "focus": "Configuration and management"
+            },
+            "hard": {
+              "questions": 20,
+              "passing_score": 85,
+              "time_limit": 30,
+              "focus": "Complex network security scenarios"
+            }
+          }
+        },
+        "3": {
+          "title": "Cryptography & PKI",
+          "description": "Deep dive into cryptographic algorithms, implementations, and public key infrastructure",
+          "learning_objectives": [
+            "Understand symmetric and asymmetric encryption",
+            "Implement PKI and certificate management",
+            "Apply cryptographic protocols",
+            "Assess cryptographic strength and vulnerabilities"
+          ],
+          "topics": [
+            "Symmetric Encryption Algorithms",
+            "Asymmetric Encryption (RSA, ECC)",
+            "Hash Functions and Digital Signatures",
+            "Public Key Infrastructure (PKI)",
+            "SSL/TLS Implementation",
+            "Cryptographic Protocols and Standards"
+          ],
+          "estimated_time": "5-6 hours",
+          "quiz": {
+            "easy": {
+              "questions": 14,
+              "passing_score": 75,
+              "time_limit": 22,
+              "focus": "Basic cryptographic concepts"
+            },
+            "medium": {
+              "questions": 18,
+              "passing_score": 80,
+              "time_limit": 28,
+              "focus": "Implementation and protocols"
+            },
+            "hard": {
+              "questions": 22,
+              "passing_score": 85,
+              "time_limit": 35,
+              "focus": "Advanced cryptographic analysis"
+            }
+          }
+        },
+        "4": {
+          "title": "Identity & Access Management",
+          "description": "Comprehensive coverage of authentication, authorization, and identity management",
+          "learning_objectives": [
+            "Design and implement IAM solutions",
+            "Configure multi-factor authentication",
+            "Manage privileged access",
+            "Implement identity lifecycle management"
+          ],
+          "topics": [
+            "IAM Fundamentals",
+            "Multi-Factor Authentication (MFA)",
+            "Single Sign-On (SSO)",
+            "Privileged Access Management (PAM)",
+            "Directory Services (Active Directory)",
+            "Federation and SAML/OAuth"
+          ],
+          "estimated_time": "4-5 hours",
+          "quiz": {
+            "easy": {
+              "questions": 12,
+              "passing_score": 75,
+              "time_limit": 20,
+              "focus": "Basic IAM concepts"
+            },
+            "medium": {
+              "questions": 16,
+              "passing_score": 80,
+              "time_limit": 25,
+              "focus": "Implementation and configuration"
+            },
+            "hard": {
+              "questions": 20,
+              "passing_score": 85,
+              "time_limit": 30,
+              "focus": "Complex IAM architectures"
+            }
+          }
+        }
+      }
+    },
+    "3": {
+      "title": "Advanced Defense",
+      "description": "Master advanced security operations, threat hunting, and incident response",
+      "total_chapters": 4,
+      "chapters": {
+        "1": {
+          "title": "Security Operations Center (SOC)",
+          "description": "Build and operate a security operations center with monitoring and response capabilities",
+          "learning_objectives": [
+            "Design SOC architecture and processes",
+            "Implement security monitoring and alerting",
+            "Develop incident response procedures",
+            "Manage security tools and technologies"
+          ],
+          "topics": [
+            "SOC Design and Architecture",
+            "Security Information and Event Management (SIEM)",
+            "Security Orchestration and Automated Response (SOAR)",
+            "Threat Intelligence Integration",
+            "Incident Response Playbooks",
+            "SOC Metrics and KPIs"
+          ],
+          "estimated_time": "5-6 hours",
+          "quiz": {
+            "easy": {
+              "questions": 14,
+              "passing_score": 75,
+              "time_limit": 22,
+              "focus": "SOC basic concepts"
+            },
+            "medium": {
+              "questions": 18,
+              "passing_score": 80,
+              "time_limit": 28,
+              "focus": "SOC operations and tools"
+            },
+            "hard": {
+              "questions": 22,
+              "passing_score": 85,
+              "time_limit": 35,
+              "focus": "Advanced SOC management"
+            }
+          }
+        },
+        "2": {
+          "title": "Threat Hunting & Intelligence",
+          "description": "Proactively hunt for threats and leverage threat intelligence for defense",
+          "learning_objectives": [
+            "Develop threat hunting methodologies",
+            "Analyze and apply threat intelligence",
+            "Use advanced hunting tools and techniques",
+            "Create threat hunting playbooks"
+          ],
+          "topics": [
+            "Threat Hunting Fundamentals",
+            "Hypothesis-Driven Hunting",
+            "Threat Intelligence Sources and Analysis",
+            "Advanced Persistent Threats (APTs)",
+            "Hunting Tools and Platforms",
+            "Threat Attribution and Analysis"
+          ],
+          "estimated_time": "5-6 hours",
+          "quiz": {
+            "easy": {
+              "questions": 14,
+              "passing_score": 75,
+              "time_limit": 22,
+              "focus": "Basic threat hunting concepts"
+            },
+            "medium": {
+              "questions": 18,
+              "passing_score": 80,
+              "time_limit": 28,
+              "focus": "Hunting methodologies and tools"
+            },
+            "hard": {
+              "questions": 22,
+              "passing_score": 85,
+              "time_limit": 35,
+              "focus": "Advanced threat analysis"
+            }
+          }
+        },
+        "3": {
+          "title": "Digital Forensics & Incident Response",
+          "description": "Master forensic analysis techniques and advanced incident response procedures",
+          "learning_objectives": [
+            "Conduct digital forensic investigations",
+            "Perform malware analysis and reverse engineering",
+            "Lead complex incident response activities",
+            "Develop forensic capabilities and procedures"
+          ],
+          "topics": [
+            "Digital Forensics Process and Methodology",
+            "Memory and Disk Forensics",
+            "Network Forensics and Packet Analysis",
+            "Malware Analysis Techniques",
+            "Advanced Incident Response",
+            "Forensic Tools and Platforms"
+          ],
+          "estimated_time": "6-7 hours",
+          "quiz": {
+            "easy": {
+              "questions": 16,
+              "passing_score": 75,
+              "time_limit": 25,
+              "focus": "Basic forensics concepts"
+            },
+            "medium": {
+              "questions": 20,
+              "passing_score": 80,
+              "time_limit": 32,
+              "focus": "Forensic analysis and tools"
+            },
+            "hard": {
+              "questions": 24,
+              "passing_score": 85,
+              "time_limit": 40,
+              "focus": "Complex forensic scenarios"
+            }
+          }
+        },
+        "4": {
+          "title": "Advanced Persistent Threats",
+          "description": "Understand, detect, and respond to sophisticated APT campaigns and nation-state actors",
+          "learning_objectives": [
+            "Identify APT tactics, techniques, and procedures",
+            "Implement APT detection strategies",
+            "Develop counter-APT measures",
+            "Analyze APT campaigns and attribution"
+          ],
+          "topics": [
+            "APT Lifecycle and Kill Chain",
+            "Nation-State Actor Analysis",
+            "APT Detection and Hunting",
+            "Counter-APT Strategies",
+            "Campaign Analysis and Attribution",
+            "Threat Modeling for APTs"
+          ],
+          "estimated_time": "5-6 hours",
+          "quiz": {
+            "easy": {
+              "questions": 14,
+              "passing_score": 75,
+              "time_limit": 22,
+              "focus": "APT basic concepts"
+            },
+            "medium": {
+              "questions": 18,
+              "passing_score": 80,
+              "time_limit": 28,
+              "focus": "APT detection and analysis"
+            },
+            "hard": {
+              "questions": 22,
+              "passing_score": 85,
+              "time_limit": 35,
+              "focus": "Advanced APT countermeasures"
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "title": "Strategic Leadership",
+      "description": "Develop strategic cybersecurity leadership, governance, and enterprise security architecture",
+      "total_chapters": 4,
+      "chapters": {
+        "1": {
+          "title": "Enterprise Security Architecture",
+          "description": "Design and implement comprehensive enterprise security architectures and frameworks",
+          "learning_objectives": [
+            "Design enterprise security architectures",
+            "Implement security by design principles",
+            "Develop security governance frameworks",
+            "Align security with business objectives"
+          ],
+          "topics": [
+            "Enterprise Security Architecture Frameworks",
+            "Security by Design Principles",
+            "Zero Trust Architecture",
+            "Cloud Security Architecture",
+            "Security Architecture Patterns",
+            "Business-Aligned Security Strategy"
+          ],
+          "estimated_time": "6-7 hours",
+          "quiz": {
+            "easy": {
+              "questions": 16,
+              "passing_score": 75,
+              "time_limit": 25,
+              "focus": "Architecture fundamentals"
+            },
+            "medium": {
+              "questions": 20,
+              "passing_score": 80,
+              "time_limit": 32,
+              "focus": "Architecture design and implementation"
+            },
+            "hard": {
+              "questions": 24,
+              "passing_score": 85,
+              "time_limit": 40,
+              "focus": "Complex architectural challenges"
+            }
+          }
+        },
+        "2": {
+          "title": "Cybersecurity Governance & Compliance",
+          "description": "Establish comprehensive cybersecurity governance, risk management, and compliance programs",
+          "learning_objectives": [
+            "Develop cybersecurity governance frameworks",
+            "Implement enterprise risk management",
+            "Ensure regulatory compliance",
+            "Lead security awareness and culture programs"
+          ],
+          "topics": [
+            "Cybersecurity Governance Frameworks",
+            "Enterprise Risk Management",
+            "Regulatory Compliance (GDPR, HIPAA, SOX)",
+            "Security Policy Development",
+            "Security Awareness Programs",
+            "Board-Level Security Reporting"
+          ],
+          "estimated_time": "5-6 hours",
+          "quiz": {
+            "easy": {
+              "questions": 14,
+              "passing_score": 75,
+              "time_limit": 22,
+              "focus": "Governance basics"
+            },
+            "medium": {
+              "questions": 18,
+              "passing_score": 80,
+              "time_limit": 28,
+              "focus": "Risk management and compliance"
+            },
+            "hard": {
+              "questions": 22,
+              "passing_score": 85,
+              "time_limit": 35,
+              "focus": "Strategic governance challenges"
+            }
+          }
+        },
+        "3": {
+          "title": "Cybersecurity Program Management",
+          "description": "Lead cybersecurity programs, manage security budgets, and measure security effectiveness",
+          "learning_objectives": [
+            "Develop and manage cybersecurity programs",
+            "Create security metrics and KPIs",
+            "Manage cybersecurity budgets and resources",
+            "Lead security transformation initiatives"
+          ],
+          "topics": [
+            "Cybersecurity Program Development",
+            "Security Metrics and Performance Measurement",
+            "Budget Management and ROI Analysis",
+            "Security Project Management",
+            "Vendor and Third-Party Risk Management",
+            "Security Maturity Assessment"
+          ],
+          "estimated_time": "5-6 hours",
+          "quiz": {
+            "easy": {
+              "questions": 14,
+              "passing_score": 75,
+              "time_limit": 22,
+              "focus": "Program management basics"
+            },
+            "medium": {
+              "questions": 18,
+              "passing_score": 80,
+              "time_limit": 28,
+              "focus": "Metrics and performance management"
+            },
+            "hard": {
+              "questions": 22,
+              "passing_score": 85,
+              "time_limit": 35,
+              "focus": "Strategic program challenges"
+            }
+          }
+        },
+        "4": {
+          "title": "Emerging Threats & Future Technologies",
+          "description": "Prepare for emerging cybersecurity threats and leverage cutting-edge security technologies",
+          "learning_objectives": [
+            "Analyze emerging threat landscapes",
+            "Evaluate new security technologies",
+            "Develop future-ready security strategies",
+            "Lead innovation in cybersecurity"
+          ],
+          "topics": [
+            "Emerging Threat Landscape Analysis",
+            "AI and Machine Learning in Security",
+            "Quantum Computing Security Implications",
+            "IoT and Edge Security Challenges",
+            "Blockchain and Cryptocurrency Security",
+            "Future-Proofing Security Strategies"
+          ],
+          "estimated_time": "6-7 hours",
+          "quiz": {
+            "easy": {
+              "questions": 16,
+              "passing_score": 75,
+              "time_limit": 25,
+              "focus": "Emerging technology basics"
+            },
+            "medium": {
+              "questions": 20,
+              "passing_score": 80,
+              "time_limit": 32,
+              "focus": "Technology implementation and threats"
+            },
+            "hard": {
+              "questions": 24,
+              "passing_score": 85,
+              "time_limit": 40,
+              "focus": "Strategic technology leadership"
+            }
+          }
+        }
+      }
+    }
+  }
+}

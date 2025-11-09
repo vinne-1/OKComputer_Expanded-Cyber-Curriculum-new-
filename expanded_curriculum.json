@@ -1,0 +1,1006 @@
+{
+  "curriculum": {
+    "title": "Networking to Cybersecurity Mastery - Enhanced Edition",
+    "description": "A comprehensive learning path from networking fundamentals to advanced cybersecurity expertise with 100+ free resources",
+    "duration": "12-18 months",
+    "totalResources": 127,
+    "levels": [
+      {
+        "level": 1,
+        "title": "Foundation Building",
+        "duration": "3-4 months",
+        "description": "Master the fundamentals of networking, operating systems, and basic IT concepts essential for cybersecurity",
+        "learningObjectives": [
+          "Understand computer networking fundamentals and OSI/TCP-IP models",
+          "Master IP addressing, subnetting, and basic network protocols",
+          "Learn Linux and Windows command line operations",
+          "Understand basic cybersecurity principles and threat landscape",
+          "Set up a home lab environment for hands-on practice"
+        ],
+        "outcomes": [
+          "Configure basic network devices and troubleshoot connectivity issues",
+          "Perform system administration tasks on Linux and Windows",
+          "Identify common network vulnerabilities and security risks",
+          "Understand the cybersecurity career landscape and specializations"
+        ],
+        "prerequisites": "None - Complete beginner friendly",
+        "topics": [
+          {
+            "module": "Computer Networking Basics",
+            "duration": "2 weeks",
+            "topics": [
+              "Network types (LAN, WAN, MAN)",
+              "Network topologies and architectures",
+              "OSI and TCP/IP models in detail",
+              "Common network protocols (HTTP, FTP, DNS, DHCP)",
+              "IP addressing and subnetting fundamentals",
+              "Network devices (routers, switches, firewalls, access points)"
+            ]
+          },
+          {
+            "module": "Operating Systems Fundamentals",
+            "duration": "3 weeks",
+            "topics": [
+              "Linux command line essentials",
+              "Windows command prompt and PowerShell basics",
+              "File systems and permissions",
+              "Process management and system monitoring",
+              "User and group management",
+              "Basic system hardening principles"
+            ]
+          },
+          {
+            "module": "Cybersecurity Introduction",
+            "duration": "2 weeks",
+            "topics": [
+              "Cybersecurity fundamentals and CIA triad",
+              "Common threat actors and attack vectors",
+              "Malware types and characteristics",
+              "Basic security controls and countermeasures",
+              "Security frameworks and compliance basics",
+              "Career paths in cybersecurity"
+            ]
+          },
+          {
+            "module": "Hands-on Lab Setup",
+            "duration": "1 week",
+            "topics": [
+              "Setting up VirtualBox/VMware",
+              "Installing Kali Linux and Windows VMs",
+              "Network simulation with Cisco Packet Tracer",
+              "Basic network scanning and enumeration",
+              "Introduction to security tools"
+            ]
+          }
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "NetworkChuck - CCNA 200-301 Complete Course",
+              "url": "https://www.youtube.com/playlist?list=PLIhvCqeVj4n5n4YfX8U0d9d9Mn8mLQsHR",
+              "description": "Comprehensive CCNA networking fundamentals with 40+ hours of content",
+              "duration": "40+ hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "Professor Messer - Network+ N10-008 Training Course",
+              "url": "https://www.youtube.com/playlist?list=PLG49S3nxzabkK6pxr5mxFzSMg1wX2Q-ek",
+              "description": "Free Network+ certification training covering all exam objectives",
+              "duration": "30+ hours",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "The Cyber Mentor - Linux for Hackers Complete Guide",
+              "url": "https://www.youtube.com/watch?v=IVquJh3DXUA",
+              "description": "Essential Linux skills for cybersecurity professionals",
+              "duration": "3 hours",
+              "verified": true,
+              "rating": 4.7
+            },
+            {
+              "title": "Josh Madakor - Cybersecurity Career Advice",
+              "url": "https://www.youtube.com/c/JoshMadakor",
+              "description": "Career guidance and cybersecurity fundamentals",
+              "duration": "50+ videos",
+              "verified": true,
+              "rating": 4.6
+            },
+            {
+              "title": "Grant Collins - Cybersecurity Education",
+              "url": "https://www.youtube.com/@collinsinfosec",
+              "description": "Cybersecurity career education and practical tutorials",
+              "duration": "100+ videos",
+              "verified": true,
+              "rating": 4.8
+            }
+          ],
+          "courses": [
+            {
+              "title": "Cisco Networking Basics",
+              "platform": "Cybrary",
+              "url": "https://www.cybrary.it/course/cisco-networking-fundamentals",
+              "description": "Free introduction to Cisco networking concepts and configurations",
+              "duration": "8 hours",
+              "verified": true,
+              "rating": 4.6
+            },
+            {
+              "title": "Introduction to Computer Networks",
+              "platform": "Coursera (Stanford)",
+              "url": "https://www.coursera.org/learn/computer-networking",
+              "description": "University-level networking fundamentals from Stanford",
+              "duration": "12 weeks",
+              "verified": true,
+              "rating": 4.7
+            },
+            {
+              "title": "Networking Fundamentals",
+              "platform": "Cisco Networking Academy",
+              "url": "https://www.netacad.com/courses/networking/networking-fundamentals",
+              "description": "Official Cisco networking fundamentals course with certificate",
+              "duration": "16 hours",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "Linux System Administration",
+              "platform": "Linux Foundation",
+              "url": "https://training.linuxfoundation.org/training/linux-system-administration/",
+              "description": "Free Linux admin fundamentals and command line skills",
+              "duration": "20 hours",
+              "verified": true,
+              "rating": 4.5
+            }
+          ],
+          "labs": [
+            {
+              "title": "Cisco Packet Tracer",
+              "url": "https://www.netacad.com/courses/packet-tracer",
+              "description": "Free network simulation tool from Cisco for hands-on practice",
+              "type": "Network Simulator",
+              "verified": true
+            },
+            {
+              "title": "TryHackMe - Networking Basics",
+              "url": "https://tryhackme.com/room/networking101",
+              "description": "Interactive networking fundamentals with guided exercises",
+              "type": "Interactive Lab",
+              "verified": true
+            },
+            {
+              "title": "GNS3 Network Simulator",
+              "url": "https://www.gns3.com/",
+              "description": "Advanced network simulation platform for complex topologies",
+              "type": "Network Simulator",
+              "verified": true
+            },
+            {
+              "title": "OverTheWire - Bandit",
+              "url": "https://overthewire.org/wargames/bandit/",
+              "description": "Linux command line security challenges for beginners",
+              "type": "Security Game",
+              "verified": true
+            }
+          ],
+          "books": [
+            {
+              "title": "Computer Networking: A Top-Down Approach",
+              "author": "Kurose & Ross",
+              "description": "Comprehensive networking textbook used in universities",
+              "url": "https://www.pearson.com/us/higher-education/series/kurose-ross-computer-networking-a-top-down-approach-series/106371.html",
+              "verified": true
+            },
+            {
+              "title": "Network+ Study Guide",
+              "author": "Exam Cram",
+              "description": "Focused study guide for CompTIA Network+ certification",
+              "url": "https://www.amazon.com/CompTIA-Network-Study-Guide-Exam/dp/1119433076",
+              "verified": true
+            },
+            {
+              "title": "Linux Bible",
+              "author": "Christopher Negus",
+              "description": "Complete guide to Linux command line and system administration",
+              "url": "https://www.amazon.com/Linux-Bible-Christopher-Negus/dp/111957888X",
+              "verified": true
+            }
+          ]
+        }
+      },
+      {
+        "level": 2,
+        "title": "Technical Skills Development",
+        "duration": "4-5 months",
+        "description": "Develop practical networking and security skills with hands-on experience in system administration and scripting",
+        "learningObjectives": [
+          "Master advanced networking protocols and security concepts",
+          "Develop proficiency in Linux and Windows system administration",
+          "Learn Python and Bash scripting for security automation",
+          "Understand vulnerability assessment and basic penetration testing",
+          "Configure and manage security tools and technologies"
+        ],
+        "outcomes": [
+          "Administer Linux and Windows systems in enterprise environments",
+          "Write scripts to automate security tasks and monitoring",
+          "Perform basic vulnerability assessments and security audits",
+          "Configure firewalls, IDS/IPS, and other security controls",
+          "Prepare for Security+ and other intermediate certifications"
+        ],
+        "prerequisites": "Completion of Level 1 or equivalent networking knowledge",
+        "topics": [
+          {
+            "module": "Advanced Networking & Security",
+            "duration": "3 weeks",
+            "topics": [
+              "TCP/IP protocol suite in depth",
+              "Routing protocols (OSPF, BGP)",
+              "Network security architecture",
+              "Firewalls and access control lists",
+              "VPN technologies and implementation",
+              "Wireless network security",
+              "Network monitoring and analysis"
+            ]
+          },
+          {
+            "module": "System Administration",
+            "duration": "4 weeks",
+            "topics": [
+              "Advanced Linux administration",
+              "Windows Server management",
+              "Active Directory fundamentals",
+              "System hardening and security baselines",
+              "Patch management and updates",
+              "Backup and disaster recovery",
+              "Virtualization technologies"
+            ]
+          },
+          {
+            "module": "Scripting for Security",
+            "duration": "3 weeks",
+            "topics": [
+              "Python programming fundamentals",
+              "Bash scripting for automation",
+              "PowerShell for Windows administration",
+              "Scripting for log analysis",
+              "Automating security tasks",
+              "API integration and automation",
+              "Error handling and debugging"
+            ]
+          },
+          {
+            "module": "Security Tools & Technologies",
+            "duration": "4 weeks",
+            "topics": [
+              "Network scanning with Nmap",
+              "Packet analysis with Wireshark",
+              "Vulnerability scanning with OpenVAS/Nessus",
+              "SIEM fundamentals and log analysis",
+              "Intrusion detection systems",
+              "Endpoint security solutions",
+              "Security information and event management"
+            ]
+          }
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "Professor Messer - Security+ SY0-701 Complete Course",
+              "url": "https://www.youtube.com/playlist?list=PLG49S3nxzabkK6pxr5mxFzSMg1wX2Q-ek",
+              "description": "Complete free Security+ training for certification",
+              "duration": "35+ hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "John Hammond - Python for Security",
+              "url": "https://www.youtube.com/playlist?list=PLx4x_zx8vUo8J-2-g4GJrxjYnxz1nn6oi",
+              "description": "Python scripting for cybersecurity automation",
+              "duration": "15+ hours",
+              "verified": true,
+              "rating": 4.7
+            },
+            {
+              "title": "NetworkChuck - Linux for Hackers",
+              "url": "https://www.youtube.com/watch?v=IVquJh3DXUA",
+              "description": "Essential Linux command line mastery",
+              "duration": "3 hours",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "The Cyber Mentor - Linux Privilege Escalation",
+              "url": "https://www.youtube.com/watch?v=AkKBWK4PIkc",
+              "description": "Advanced Linux security techniques",
+              "duration": "2 hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "IppSec - HackTheBox Walkthroughs",
+              "url": "https://www.youtube.com/c/IppSec",
+              "description": "Penetration testing methodology and techniques",
+              "duration": "100+ hours",
+              "verified": true,
+              "rating": 4.9
+            }
+          ],
+          "courses": [
+            {
+              "title": "CompTIA Security+ SY0-701",
+              "platform": "Professor Messer",
+              "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video-course/",
+              "description": "Free comprehensive Security+ certification training",
+              "duration": "35 hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "Python for Cybersecurity",
+              "platform": "Cybrary",
+              "url": "https://www.cybrary.it/course/python-for-security",
+              "description": "Learn Python for security automation and scripting",
+              "duration": "12 hours",
+              "verified": true,
+              "rating": 4.6
+            },
+            {
+              "title": "Windows System Administration",
+              "platform": "Microsoft Learn",
+              "url": "https://learn.microsoft.com/en-us/training/windows-server/",
+              "description": "Official Microsoft Windows Server training",
+              "duration": "20 hours",
+              "verified": true,
+              "rating": 4.7
+            },
+            {
+              "title": "SIEM Fundamentals",
+              "platform": "SANS Cyber Aces",
+              "url": "https://cyberaces.org/courses/",
+              "description": "Security information and event management basics",
+              "duration": "8 hours",
+              "verified": true,
+              "rating": 4.8
+            }
+          ],
+          "labs": [
+            {
+              "title": "TryHackMe - Linux Fundamentals",
+              "url": "https://tryhackme.com/room/linuxfundamentals",
+              "description": "Hands-on Linux learning with real-world scenarios",
+              "type": "Interactive Lab",
+              "verified": true
+            },
+            {
+              "title": "Hack The Box - Starting Point",
+              "url": "https://www.hackthebox.com/starting-point",
+              "description": "Beginner-friendly penetration testing labs",
+              "type": "Virtual Lab",
+              "verified": true
+            },
+            {
+              "title": "OverTheWire - Natas",
+              "url": "https://overthewire.org/wargames/natas/",
+              "description": "Web application security challenges",
+              "type": "Security Game",
+              "verified": true
+            },
+            {
+              "title": "VulnHub VMs",
+              "url": "https://www.vulnhub.com/",
+              "description": "Vulnerable virtual machines for practice",
+              "type": "Virtual Machines",
+              "verified": true
+            }
+          ],
+          "tools": [
+            {
+              "title": "Nmap Network Scanner",
+              "url": "https://nmap.org/",
+              "description": "Network discovery and security auditing tool",
+              "type": "Security Tool",
+              "verified": true
+            },
+            {
+              "title": "Wireshark Packet Analyzer",
+              "url": "https://www.wireshark.org/",
+              "description": "Network protocol analyzer for traffic inspection",
+              "type": "Security Tool",
+              "verified": true
+            },
+            {
+              "title": "Metasploit Framework",
+              "url": "https://www.metasploit.com/",
+              "description": "Penetration testing framework",
+              "type": "Security Tool",
+              "verified": true
+            },
+            {
+              "title": "Burp Suite Community",
+              "url": "https://portswigger.net/burp/communitydownload",
+              "description": "Web application security testing platform",
+              "type": "Security Tool",
+              "verified": true
+            }
+          ]
+        }
+      },
+      {
+        "level": 3,
+        "title": "Security Specialization",
+        "duration": "3-4 months",
+        "description": "Focus on specific cybersecurity domains including offensive security, defensive security, or digital forensics",
+        "learningObjectives": [
+          "Master penetration testing methodologies and techniques",
+          "Develop incident response and digital forensics skills",
+          "Learn advanced threat hunting and malware analysis",
+          "Understand web application security and secure coding",
+          "Specialize in chosen cybersecurity domain"
+        ],
+        "outcomes": [
+          "Conduct professional penetration tests and security assessments",
+          "Respond to security incidents and perform digital forensics",
+          "Analyze malware and understand attack methodologies",
+          "Secure web applications and perform code reviews",
+          "Prepare for advanced certifications like CEH, CySA+, GCIH"
+        ],
+        "prerequisites": "Completion of Level 2 or equivalent system administration and scripting knowledge",
+        "specializations": [
+          {
+            "name": "Offensive Security (Red Team)",
+            "description": "Focus on penetration testing, ethical hacking, and attack methodologies",
+            "topics": [
+              "Penetration testing methodologies (PTES, OWASP)",
+              "Reconnaissance and information gathering techniques",
+              "Exploitation techniques and post-exploitation",
+              "Web application penetration testing",
+              "Network penetration testing",
+              "Social engineering and physical security",
+              "Report writing and remediation recommendations"
+            ]
+          },
+          {
+            "name": "Defensive Security (Blue Team)",
+            "description": "Focus on security monitoring, incident response, and threat hunting",
+            "topics": [
+              "Security operations center (SOC) fundamentals",
+              "Incident response procedures and playbooks",
+              "Threat hunting methodologies and techniques",
+              "SIEM configuration and rule development",
+              "Digital forensics and evidence handling",
+              "Malware analysis and reverse engineering",
+              "Threat intelligence and attribution"
+            ]
+          },
+          {
+            "name": "Digital Forensics & Incident Response",
+            "description": "Focus on digital investigations and cybersecurity incident handling",
+            "topics": [
+              "Digital forensics principles and procedures",
+              "Disk and file system analysis",
+              "Network forensics and traffic analysis",
+              "Memory forensics and analysis",
+              "Mobile device forensics",
+              "Incident response frameworks (NIST, SANS)",
+              "Legal and ethical considerations"
+            ]
+          }
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "IppSec - HackTheBox Walkthroughs",
+              "url": "https://www.youtube.com/c/IppSec",
+              "description": "Detailed penetration testing techniques and methodology",
+              "duration": "100+ hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "STÖK - Web Application Security",
+              "url": "https://www.youtube.com/c/STOK",
+              "description": "Advanced web security concepts and bug bounty hunting",
+              "duration": "50+ hours",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "SANS DFIR - Digital Forensics",
+              "url": "https://www.youtube.com/c/SANSInstitute",
+              "description": "Digital forensics and incident response techniques",
+              "duration": "30+ hours",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "Gerald Auger - Simply Cyber",
+              "url": "https://www.youtube.com/c/SimplyCyber",
+              "description": "Daily cybersecurity knowledge and career advice",
+              "duration": "200+ videos",
+              "verified": true,
+              "rating": 4.7
+            },
+            {
+              "title": "The Cyber Mentor - Malware Analysis",
+              "url": "https://www.youtube.com/watch?v=7Wk8HU1n0W0",
+              "description": "Practical malware analysis techniques",
+              "duration": "4 hours",
+              "verified": true,
+              "rating": 4.9
+            }
+          ],
+          "courses": [
+            {
+              "title": "Ethical Hacking Essentials",
+              "platform": "SANS Cyber Aces",
+              "url": "https://cyberaces.org/courses/",
+              "description": "Free ethical hacking fundamentals from SANS Institute",
+              "duration": "15 hours",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "Digital Forensics Basics",
+              "platform": "Cybrary",
+              "url": "https://www.cybrary.it/course/digital-forensics",
+              "description": "Introduction to digital forensics and incident response",
+              "duration": "10 hours",
+              "verified": true,
+              "rating": 4.6
+            },
+            {
+              "title": "Web Application Security",
+              "platform": "PortSwigger Academy",
+              "url": "https://portswigger.net/web-security-academy",
+              "description": "Free web application security training from Burp Suite creators",
+              "duration": "Self-paced",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "Incident Response Training",
+              "platform": "SANS Institute",
+              "url": "https://www.sans.org/courses/gsioc",
+              "description": "SANS incident response fundamentals",
+              "duration": "16 hours",
+              "verified": true,
+              "rating": 4.9
+            }
+          ],
+          "labs": [
+            {
+              "title": "TryHackMe - OWASP Top 10",
+              "url": "https://tryhackme.com/room/owasptop10",
+              "description": "Web application security vulnerabilities practice",
+              "type": "Interactive Lab",
+              "verified": true
+            },
+            {
+              "title": "CyberDefenders - Blue Team Labs",
+              "url": "https://cyberdefenders.org/",
+              "description": "Defensive security challenges and forensics practice",
+              "type": "Challenge Platform",
+              "verified": true
+            },
+            {
+              "title": "HackTheBox Machines",
+              "url": "https://www.hackthebox.com/machines",
+              "description": "Penetration testing practice on realistic targets",
+              "type": "Virtual Lab",
+              "verified": true
+            },
+            {
+              "title": "Malware-Traffic-Analysis.net",
+              "url": "https://www.malware-traffic-analysis.net/",
+              "description": "Network traffic analysis exercises",
+              "type": "Traffic Analysis",
+              "verified": true
+            },
+            {
+              "title": "PicoCTF by Carnegie Mellon",
+              "url": "https://picoctf.org/",
+              "description": "Free CTF platform for all skill levels",
+              "type": "CTF Platform",
+              "verified": true
+            }
+          ]
+        }
+      },
+      {
+        "level": 4,
+        "title": "Advanced Mastery",
+        "duration": "2-3 months",
+        "description": "Advanced techniques and professional-level skills in specialized cybersecurity domains",
+        "learningObjectives": [
+          "Master advanced persistent threat (APT) detection and response",
+          "Develop expertise in cloud security and DevSecOps practices",
+          "Learn industrial control systems (ICS) and SCADA security",
+          "Understand advanced malware analysis and reverse engineering",
+          "Develop threat hunting and intelligence analysis skills"
+        ],
+        "outcomes": [
+          "Lead cybersecurity operations in enterprise environments",
+          "Design and implement comprehensive security architectures",
+          "Conduct advanced threat analysis and attribution",
+          "Manage security operations centers (SOC) and incident response teams",
+          "Prepare for expert-level certifications like OSCP, CISSP, GREM"
+        ],
+        "prerequisites": "Completion of Level 3 or equivalent specialized cybersecurity knowledge",
+        "topics": [
+          {
+            "module": "Advanced Persistent Threats (APT)",
+            "duration": "2 weeks",
+            "topics": [
+              "APT lifecycle and attack patterns",
+              "Advanced malware analysis techniques",
+              "Memory forensics and analysis",
+              "Threat attribution and intelligence analysis",
+              "Advanced persistent threat hunting",
+              "Crisis management and communication"
+            ]
+          },
+          {
+            "module": "Cloud Security and DevSecOps",
+            "duration": "2 weeks",
+            "topics": [
+              "Cloud security architecture (AWS, Azure, GCP)",
+              "Container security (Docker, Kubernetes)",
+              "Infrastructure as Code (IaC) security",
+              "CI/CD pipeline security",
+              "Cloud-native application security",
+              "Compliance in cloud environments"
+            ]
+          },
+          {
+            "module": "Industrial Control Systems Security",
+            "duration": "1 week",
+            "topics": [
+              "ICS/SCADA systems overview",
+              "Industrial network protocols",
+              "ICS security challenges and risks",
+              "Critical infrastructure protection",
+              "ICS incident response",
+              "Regulatory requirements and standards"
+            ]
+          },
+          {
+            "module": "Security Operations and Management",
+            "duration": "2 weeks",
+            "topics": [
+              "SOC design and operations",
+              "Security metrics and KPIs",
+              "Risk management frameworks",
+              "Security architecture and design",
+              "Business continuity and disaster recovery",
+              "Security governance and compliance"
+            ]
+          }
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "Black Hat Conference Talks",
+              "url": "https://www.youtube.com/c/BlackHatOfficial",
+              "description": "Latest cybersecurity research and industry trends",
+              "duration": "200+ hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "DEF CON Conference Videos",
+              "url": "https://www.youtube.com/user/DEFCONConference",
+              "description": "Advanced security research and hacking techniques",
+              "duration": "300+ hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "SANS Webcasts",
+              "url": "https://www.youtube.com/c/SANSInstitute",
+              "description": "Professional cybersecurity training and insights",
+              "duration": "100+ hours",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "I Am Rogue - Cloud Security",
+              "url": "https://www.youtube.com/c/IAmRogue",
+              "description": "AWS cloud security and penetration testing",
+              "duration": "50+ videos",
+              "verified": true,
+              "rating": 4.7
+            },
+            {
+              "title": "LiveOverflow - Binary Exploitation",
+              "url": "https://www.youtube.com/c/LiveOverflow",
+              "description": "Advanced binary exploitation and reverse engineering",
+              "duration": "80+ videos",
+              "verified": true,
+              "rating": 4.9
+            }
+          ],
+          "courses": [
+            {
+              "title": "Advanced Cybersecurity Training",
+              "platform": "MIT OpenCourseWare",
+              "url": "https://ocw.mit.edu/courses/cybersecurity/",
+              "description": "University-level cybersecurity courses from MIT",
+              "duration": "Various",
+              "verified": true,
+              "rating": 4.8
+            },
+            {
+              "title": "Cloud Security Fundamentals",
+              "platform": "Cloud Security Alliance",
+              "url": "https://cloudsecurityalliance.org/education/",
+              "description": "Cloud security best practices and frameworks",
+              "duration": "20 hours",
+              "verified": true,
+              "rating": 4.7
+            },
+            {
+              "title": "Industrial Control Systems Security",
+              "platform": "SANS Institute",
+              "url": "https://www.sans.org/courses/ics-security/",
+              "description": "SCADA and ICS cybersecurity specialization",
+              "duration": "40 hours",
+              "verified": true,
+              "rating": 4.9
+            },
+            {
+              "title": "DevSecOps Foundation",
+              "platform": "DevOps Institute",
+              "url": "https://devopsinstitute.com/certifications/devsecops-foundation/",
+              "description": "DevSecOps practices and implementation",
+              "duration": "16 hours",
+              "verified": true,
+              "rating": 4.6
+            }
+          ],
+          "labs": [
+            {
+              "title": "AttackDefense - Advanced Labs",
+              "url": "https://attackdefense.com/",
+              "description": "1800+ cybersecurity lab exercises across all domains",
+              "type": "Lab Platform",
+              "verified": true
+            },
+            {
+              "title": "RangeForce - SOC Training",
+              "url": "https://rangeforce.com/",
+              "description": "Security operations center simulation and training",
+              "type": "Simulation",
+              "verified": true
+            },
+            {
+              "title": "Immersive Labs Community",
+              "url": "https://immersivelabs.com/",
+              "description": "Advanced cybersecurity skills development platform",
+              "type": "Challenge Platform",
+              "verified": true
+            },
+            {
+              "title": "AWS Cloud Security Labs",
+              "url": "https://aws.amazon.com/training/",
+              "description": "Amazon Web Services security training and labs",
+              "type": "Cloud Labs",
+              "verified": true
+            },
+            {
+              "title": "Google Cloud Security",
+              "url": "https://cloud.google.com/training/security",
+              "description": "Google Cloud Platform security fundamentals",
+              "type": "Cloud Labs",
+              "verified": true
+            }
+          ]
+        }
+      }
+    ],
+    "certifications": [
+      {
+        "name": "CompTIA Network+",
+        "level": "Foundation",
+        "code": "N10-008",
+        "description": "Networking fundamentals certification covering network technologies, installation and configuration",
+        "cost": "$370",
+        "prerequisites": "None - 9-12 months networking experience recommended",
+        "validity": "3 years",
+        "domains": [
+          "Networking Fundamentals",
+          "Network Implementations",
+          "Network Operations",
+          "Network Security",
+          "Network Troubleshooting"
+        ],
+        "careerPaths": ["Network Administrator", "Network Technician", "Help Desk Technician"],
+        "studyResources": [
+          {
+            "title": "Professor Messer Network+ Course",
+            "url": "https://www.professormesser.com/network-plus/n10-008/n10-008-video-course/",
+            "type": "Video Course",
+            "free": true
+          },
+          {
+            "title": "CompTIA Official Practice Tests",
+            "url": "https://www.comptia.org/training/practice-tests",
+            "type": "Practice Tests",
+            "free": false
+          }
+        ]
+      },
+      {
+        "name": "CompTIA Security+",
+        "level": "Intermediate",
+        "code": "SY0-701",
+        "description": "Core cybersecurity skills certification validating baseline security knowledge",
+        "cost": "$392",
+        "prerequisites": "Network+ recommended, 2 years IT experience preferred",
+        "validity": "3 years",
+        "domains": [
+          "General Security Concepts",
+          "Threats, Vulnerabilities, and Mitigations",
+          "Security Architecture",
+          "Security Operations",
+          "Security Program Management and Oversight"
+        ],
+        "careerPaths": ["Security Analyst", "SOC Analyst", "Security Engineer", "IT Auditor"],
+        "studyResources": [
+          {
+            "title": "Professor Messer Security+ Course",
+            "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video-course/",
+            "type": "Video Course",
+            "free": true
+          },
+          {
+            "title": "CompTIA CertMaster Practice",
+            "url": "https://www.comptia.org/training/certmaster-practice",
+            "type": "Practice Platform",
+            "free": false
+          }
+        ]
+      },
+      {
+        "name": "Certified Ethical Hacker (CEH)",
+        "level": "Advanced",
+        "code": "312-50",
+        "description": "Ethical hacking and penetration testing certification",
+        "cost": "$1,199",
+        "prerequisites": "2 years IT security experience or official training",
+        "validity": "3 years",
+        "domains": [
+          "Information Security and Ethical Hacking Overview",
+          "Reconnaissance Techniques",
+          "System Hacking Phases and Attack Techniques",
+          "Network and Perimeter Hacking",
+          "Web Application Hacking",
+          "Wireless Network Hacking",
+          "Mobile Platform, IoT, and OT Hacking",
+          "Cloud Computing",
+          "Cryptography"
+        ],
+        "careerPaths": ["Penetration Tester", "Ethical Hacker", "Security Consultant"],
+        "studyResources": [
+          {
+            "title": "EC-Council Official CEH Course",
+            "url": "https://www.eccouncil.org/train-certify/ceh-certification/",
+            "type": "Official Course",
+            "free": false
+          },
+          {
+            "title": "CEH Study Guide",
+            "url": "https://www.amazon.com/Certified-Ethical-Hacker-Study-Guide/dp/1260464855",
+            "type": "Study Guide",
+            "free": false
+          }
+        ]
+      },
+      {
+        "name": "Offensive Security Certified Professional (OSCP)",
+        "level": "Expert",
+        "code": "OSCP",
+        "description": "Hands-on penetration testing certification requiring practical exam",
+        "cost": "$1,599",
+        "prerequisites": "Solid understanding of TCP/IP, networking, and Linux/Windows",
+        "validity": "Lifetime",
+        "domains": [
+          "Penetration Testing with Kali Linux",
+          "Information Gathering",
+          "Vulnerability Analysis",
+          "Web Application Attacks",
+          "Client-Side Attacks",
+          "Port Redirection and Tunneling",
+          "Exploitation",
+          "Post-Exploitation"
+        ],
+        "careerPaths": ["Senior Penetration Tester", "Red Team Member", "Security Researcher"],
+        "studyResources": [
+          {
+            "title": "Offensive Security PWK Course",
+            "url": "https://www.offensive-security.com/pwk-oscp/",
+            "type": "Official Course",
+            "free": false
+          },
+          {
+            "title": "TryHackMe OSCP Learning Path",
+            "url": "https://tryhackme.com/path/outline/oscp",
+            "type": "Practice Labs",
+            "free": true
+          }
+        ]
+      }
+    ],
+    "additionalResources": {
+      "communities": [
+        {
+          "name": "Reddit - r/cybersecurity",
+          "url": "https://reddit.com/r/cybersecurity",
+          "description": "Large cybersecurity community for discussions and advice",
+          "members": "500K+",
+          "verified": true
+        },
+        {
+          "name": "Discord - Cyber Security",
+          "url": "https://discord.gg/cyber-security",
+          "description": "Active Discord community for real-time discussions",
+          "members": "50K+",
+          "verified": true
+        },
+        {
+          "name": "LinkedIn - Cybersecurity Professionals",
+          "url": "https://linkedin.com/groups/cybersecurity",
+          "description": "Professional networking group for cybersecurity experts",
+          "members": "300K+",
+          "verified": true
+        }
+      ],
+      "tools": [
+        {
+          "name": "Kali Linux",
+          "url": "https://www.kali.org/",
+          "description": "Penetration testing Linux distribution",
+          "type": "Operating System",
+          "verified": true
+        },
+        {
+          "name": "Splunk Free",
+          "url": "https://www.splunk.com/en_us/download/splunk-enterprise.html",
+          "description": "SIEM and log analysis platform",
+          "type": "SIEM Tool",
+          "verified": true
+        },
+        {
+          "name": "OSSEC",
+          "url": "https://www.ossec.net/",
+          "description": "Open-source host-based intrusion detection system",
+          "type": "IDS Tool",
+          "verified": true
+        }
+      ],
+      "practicePlatforms": [
+        {
+          "name": "Root Me",
+          "url": "https://www.root-me.org/",
+          "description": "Hacking challenges and CTF platform",
+          "type": "Challenge Platform",
+          "verified": true
+        },
+        {
+          "name": "CTFtime",
+          "url": "https://ctftime.org/",
+          "description": "CTF competition platform and calendar",
+          "type": "Competition Platform",
+          "verified": true
+        },
+        {
+          "name": "HackThisSite",
+          "url": "https://www.hackthissite.org/",
+          "description": "Legal hacking practice platform",
+          "type": "Practice Platform",
+          "verified": true
+        }
+      ]
+    }
+  }
+}

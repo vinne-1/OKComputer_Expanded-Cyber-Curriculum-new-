@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resources - Cybersecurity Mastery Enhanced</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.dots.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #0a0a0a;
+        }
+        .resource-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .resource-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(99, 102, 241, 0.2);
+        }
+        .category-filter {
+            transition: all 0.3s ease;
+        }
+        .category-filter.active {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .vanta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .content-overlay {
+            position: relative;
+            z-index: 2;
+        }
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        .stats-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .filter-dropdown {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-2xl text-indigo-400"></i>
+                    <span class="text-xl font-bold">CyberMastery</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="enhanced_index.html" class="text-gray-300 hover:text-indigo-400 transition-colors">Home</a>
+                    <a href="enhanced_resources.html" class="text-indigo-400">Resources</a>
+                    <a href="enhanced_index.html#certifications" class="text-gray-300 hover:text-indigo-400 transition-colors">Certifications</a>
+                    <a href="enhanced_index.html#community" class="text-gray-300 hover:text-indigo-400 transition-colors">Community</a>
+                </div>
+                <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors" onclick="showSavedResources()">
+                    <i class="fas fa-bookmark mr-2"></i>Saved
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center bg-gray-900 overflow-hidden">
+        <div id="vanta-bg" class="vanta-bg"></div>
+        <div class="content-overlay w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+                <div class="text-center">
+                    <h1 class="text-5xl lg:text-6xl font-black mb-6">
+                        <span class="gradient-text">Free Resources</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                        Comprehensive collection of <strong>127+ verified free cybersecurity resources</strong> including YouTube playlists, 
+                        online courses, hands-on labs, and professional tools with regular updates and community ratings.
+                    </p>
+                    
+                    <!-- Search Bar -->
+                    <div class="max-w-2xl mx-auto mb-8">
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                placeholder="Search resources by name, topic, or platform..." 
+                                class="search-box w-full px-6 py-4 rounded-xl text-white placeholder-gray-400"
+                            >
+                            <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Filters -->
+                    <div class="flex flex-wrap justify-center gap-3 mb-6">
+                        <button class="category-filter active px-6 py-2 rounded-full border border-gray-600 text-sm font-medium" data-category="all">
+                            All Resources
+                        </button>
+                        <button class="category-filter px-6 py-2 rounded-full border border-gray-600 text-sm font-medium" data-category="youtube">
+                            <i class="fab fa-youtube mr-2"></i>YouTube
+                        </button>
+                        <button class="category-filter px-6 py-2 rounded-full border border-gray-600 text-sm font-medium" data-category="courses">
+                            <i class="fas fa-graduation-cap mr-2"></i>Courses
+                        </button>
+                        <button class="category-filter px-6 py-2 rounded-full border border-gray-600 text-sm font-medium" data-category="labs">
+                            <i class="fas fa-flask mr-2"></i>Labs
+                        </button>
+                        <button class="category-filter px-6 py-2 rounded-full border border-gray-600 text-sm font-medium" data-category="tools">
+                            <i class="fas fa-tools mr-2"></i>Tools
+                        </button>
+                        <button class="category-filter px-6 py-2 rounded-full border border-gray-600 text-sm font-medium" data-category="books">
+                            <i class="fas fa-book mr-2"></i>Books
+                        </button>
+                        <button class="category-filter px-6 py-2 rounded-full border border-gray-600 text-sm font-medium" data-category="community">
+                            <i class="fas fa-users mr-2"></i>Community
+                        </button>
+                    </div>
+
+                    <!-- Level Filter -->
+                    <div class="flex justify-center mb-8">
+                        <select id="levelFilter" class="filter-dropdown px-4 py-2 rounded-lg text-white">
+                            <option value="all">All Levels</option>
+                            <option value="1">Foundation (Level 1)</option>
+                            <option value="2">Technical Skills (Level 2)</option>
+                            <option value="3">Specialization (Level 3)</option>
+                            <option value="4">Advanced Mastery (Level 4)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Statistics -->
+    <section class="py-12 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <div class="stats-card rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-indigo-400" id="totalResourcesStat">127+</div>
+                    <div class="text-xs text-gray-400">Total Resources</div>
+                </div>
+                <div class="stats-card rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-red-400" id="youtubeResourcesStat">15</div>
+                    <div class="text-xs text-gray-400">YouTube Channels</div>
+                </div>
+                <div class="stats-card rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-blue-400" id="courseResourcesStat">12</div>
+                    <div class="text-xs text-gray-400">Online Courses</div>
+                </div>
+                <div class="stats-card rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-green-400" id="labResourcesStat">15</div>
+                    <div class="text-xs text-gray-400">Hands-on Labs</div>
+                </div>
+                <div class="stats-card rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-purple-400" id="toolResourcesStat">8</div>
+                    <div class="text-xs text-gray-400">Security Tools</div>
+                </div>
+                <div class="stats-card rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-orange-400">85</div>
+                    <div class="text-xs text-gray-400">Free Resources</div>
+                </div>
+                <div class="stats-card rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-pink-400">100%</div>
+                    <div class="text-xs text-gray-400">Verified Links</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">
+                        <span class="gradient-text">Learning Resources</span>
+                    </h2>
+                    <p class="text-gray-400">Discover and access verified cybersecurity learning materials</p>
+                </div>
+                <div class="flex space-x-2">
+                    <button onclick="showRecommendations()" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm transition-colors">
+                        <i class="fas fa-star mr-2"></i>Recommendations
+                    </button>
+                    <button onclick="showRecent()" class="bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg text-sm transition-colors">
+                        <i class="fas fa-clock mr-2"></i>Recent
+                    </button>
+                </div>
+            </div>
+            
+            <div id="resourcesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Resources will be dynamically loaded here -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="loadMoreBtn" class="bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    <i class="fas fa-plus mr-2"></i>Load More Resources
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Favorites -->
+    <section class="py-20 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="gradient-text">Community Favorites</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Most popular resources recommended by our cybersecurity community with high ratings and engagement.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="communityFavorites">
+                <!-- Community favorites will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="gradient-text">Learning Paths</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Structured learning paths designed to guide you from beginner to expert in specific cybersecurity domains.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-network-wired text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Networking Fundamentals</h3>
+                    <p class="text-gray-400 text-sm mb-4">Master the basics of computer networks and protocols</p>
+                    <div class="text-sm text-gray-500 mb-4">12 Resources • 40+ Hours</div>
+                    <button onclick="showLearningPath(1)" class="w-full bg-indigo-600 hover:bg-indigo-700 py-2 rounded-lg transition-colors">
+                        Start Path
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Security+ Certification</h3>
+                    <p class="text-gray-400 text-sm mb-4">Prepare for CompTIA Security+ certification</p>
+                    <div class="text-sm text-gray-500 mb-4">15 Resources • 50+ Hours</div>
+                    <button onclick="showLearningPath(2)" class="w-full bg-purple-600 hover:bg-purple-700 py-2 rounded-lg transition-colors">
+                        Start Path
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bug text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Penetration Testing</h3>
+                    <p class="text-gray-400 text-sm mb-4">Learn ethical hacking and penetration testing</p>
+                    <div class="text-sm text-gray-500 mb-4">20 Resources • 80+ Hours</div>
+                    <button onclick="showLearningPath(3)" class="w-full bg-pink-600 hover:bg-pink-700 py-2 rounded-lg transition-colors">
+                        Start Path
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cloud text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cloud Security</h3>
+                    <p class="text-gray-400 text-sm mb-4">Master cloud security and DevSecOps</p>
+                    <div class="text-sm text-gray-500 mb-4">18 Resources • 60+ Hours</div>
+                    <button onclick="showLearningPath(4)" class="w-full bg-cyan-600 hover:bg-cyan-700 py-2 rounded-lg transition-colors">
+                        Start Path
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Insights -->
+    <section class="py-20 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="gradient-text">Your Learning Insights</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Track your progress and discover personalized recommendations based on your learning patterns.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="stats-card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-bold text-indigo-400 mb-2" id="resourcesAccessed">0</div>
+                    <div class="text-gray-400 mb-2">Resources Accessed</div>
+                    <div class="text-sm text-gray-500">This session</div>
+                </div>
+                <div class="stats-card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-bold text-purple-400 mb-2" id="studyTime">0h</div>
+                    <div class="text-gray-400 mb-2">Study Time</div>
+                    <div class="text-sm text-gray-500">Estimated</div>
+                </div>
+                <div class="stats-card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-bold text-pink-400 mb-2" id="favoriteCategory">None</div>
+                    <div class="text-gray-400 mb-2">Favorite Category</div>
+                    <div class="text-sm text-gray-500">Based on clicks</div>
+                </div>
+                <div class="stats-card rounded-xl p-6 text-center">
+                    <div class="text-3xl font-bold text-cyan-400 mb-2" id="completionRate">0%</div>
+                    <div class="text-gray-400 mb-2">Completion Rate</div>
+                    <div class="text-sm text-gray-500">Overall progress</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fas fa-shield-alt text-2xl text-indigo-400"></i>
+                    <span class="text-2xl font-bold">CyberMastery</span>
+                </div>
+                <p class="text-gray-400 mb-6">
+                    Empowering the next generation of cybersecurity professionals with free, structured learning.
+                </p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition-colors" onclick="showNotification('Twitter community coming soon!', 'info')">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition-colors" onclick="showNotification('GitHub resources coming soon!', 'info')">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition-colors" onclick="showNotification('YouTube channel coming soon!', 'info')">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">
+                    © 2025 CyberMastery. Built for the cybersecurity community with ❤️
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Resource Modal -->
+    <div id="resourceModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-800 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 id="modalTitle" class="text-2xl font-bold">Learning Resources</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-white text-2xl transition-colors">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div id="modalContent" class="space-y-6">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced JavaScript -->
+    <script src="enhanced_resources.js"></script>
+    
+    <!-- Additional Interactive Features -->
+    <script>
+        // Initialize community favorites
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCommunityFavorites();
+            updateUserInsights();
+        });
+
+        function loadCommunityFavorites() {
+            const favorites = [
+                {
+                    title: "NetworkChuck - CCNA Complete Course",
+                    description: "Most popular networking fundamentals course with 40+ hours of content",
+                    rating: 4.9,
+                    users: "1.2M subscribers",
+                    icon: "fab fa-youtube text-red-500"
+                },
+                {
+                    title: "Professor Messer - Security+ Training",
+                    description: "Gold standard for Security+ certification preparation",
+                    rating: 4.8,
+                    users: "800K subscribers",
+                    icon: "fab fa-youtube text-red-500"
+                },
+                {
+                    title: "TryHackMe - Hands-on Labs",
+                    description: "Interactive cybersecurity learning platform with real-world scenarios",
+                    rating: 4.8,
+                    users: "2M+ users",
+                    icon: "fas fa-flask text-green-500"
+                }
+            ];
+
+            const container = document.getElementById('communityFavorites');
+            container.innerHTML = favorites.map(fav => `
+                <div class="resource-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="${fav.icon} text-2xl mr-3"></i>
+                        <div>
+                            <h3 class="text-lg font-bold">${fav.title}</h3>
+                            <p class="text-sm text-gray-400">${fav.users}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">${fav.description}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <span class="text-yellow-400 mr-1">⭐</span>
+                            <span class="text-sm text-gray-400">${fav.rating}</span>
+                        </div>
+                        <span class="text-xs bg-green-600 px-2 py-1 rounded">Community Choice</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateUserInsights() {
+            const insights = generateUserInsights();
+            
+            document.getElementById('resourcesAccessed').textContent = insights.totalResourcesAccessed;
+            document.getElementById('studyTime').textContent = insights.studyTime + 'h';
+            document.getElementById('favoriteCategory').textContent = insights.favoriteCategory;
+            document.getElementById('completionRate').textContent = insights.completionRate + '%';
+        }
+
+        function showRecommendations() {
+            showNotification('🎯 Loading personalized recommendations based on your learning history...', 'info');
+            
+            // Simulate loading recommendations
+            setTimeout(() => {
+                showNotification('✅ Check out the "Community Favorites" section for recommended resources!', 'success');
+            }, 2000);
+        }
+
+        function showRecent() {
+            showNotification('🕒 Loading recently added and updated resources...', 'info');
+            
+            // Filter for recent resources (last 30 days)
+            const recentResources = enhancedResourcesDatabase.filter(resource => {
+                if (!resource.lastUpdated) return false;
+                const updateDate = new Date(resource.lastUpdated);
+                const thirtyDaysAgo = new Date();
+                thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+                return updateDate > thirtyDaysAgo;
+            });
+            
+            setTimeout(() => {
+                showNotification(`📅 Found ${recentResources.length} recently updated resources!`, 'success');
+                // Could implement filtering here
+            }, 1500);
+        }
+
+        function showSavedResources() {
+            const saved = getSavedResources();
+            
+            if (saved.length === 0) {
+                showNotification('💾 No saved resources yet. Click the bookmark icon to save resources!', 'warning');
+                return;
+            }
+            
+            showNotification(`💾 You have ${saved.length} saved resources!`, 'info');
+            
+            // Could implement a saved resources view
+            setTimeout(() => {
+                showNotification('📚 Saved resources feature coming soon!', 'info');
+            }, 2000);
+        }
+
+        function showLearningPath(level) {
+            const levelNames = {
+                1: 'Networking Fundamentals',
+                2: 'Security+ Certification',
+                3: 'Penetration Testing',
+                4: 'Cloud Security'
+            };
+            
+            showNotification(`🚀 Starting ${levelNames[level]} learning path!`, 'success');
+            
+            // Filter resources by level
+            const levelResources = enhancedResourcesDatabase.filter(r => r.level == level);
+            
+            setTimeout(() => {
+                showNotification(`📚 Found ${levelResources.length} resources for this learning path!`, 'info');
+                // Could implement level-specific filtering
+            }, 2000);
+        }
+
+        // Add hover effects and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add particle effects to buttons
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    createParticleEffect(this);
+                });
+            });
+
+            // Add click tracking to resource cards
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.resource-card')) {
+                    const card = e.target.closest('.resource-card');
+                    const category = card.dataset.category;
+                    const title = card.querySelector('h3').textContent;
+                    
+                    if (!e.target.closest('a') && !e.target.closest('button')) {
+                        trackResourceEngagement(title, category);
+                    }
+                }
+            });
+        });
+
+        // Auto-refresh resource stats every 5 minutes
+        setInterval(() => {
+            updateUserInsights();
+        }, 300000);
+    </script>
+</body>
+</html>

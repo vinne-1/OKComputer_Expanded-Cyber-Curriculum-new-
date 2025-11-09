@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Learning Path - Chapter Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.179.1/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .vanta-canvas { position: fixed !important; top: 0; left: 0; z-index: -1; }
+        .glass-effect { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .chapter-card { transition: all 0.3s ease; }
+        .chapter-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        .difficulty-badge { font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 0.375rem; }
+        .progress-ring { transform: rotate(-90deg); }
+        .progress-ring-circle { transition: stroke-dashoffset 0.35s; }
+        .fade-in { animation: fadeIn 0.6s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div id="vanta-bg" class="fixed inset-0 z-0"></div>
+    
+    <!-- Navigation -->
+    <nav class="relative z-10 glass-effect border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-shield-alt text-emerald-400 text-2xl"></i>
+                    <span class="text-xl font-bold">CyberGuard Academy</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-slate-300 hover:text-white transition-colors">Dashboard</a>
+                    <a href="chapters.html" class="text-emerald-400 font-medium">Chapters</a>
+                    <a href="resources.html" class="text-slate-300 hover:text-white transition-colors">Resources</a>
+                    <a href="profile.html" class="text-slate-300 hover:text-white transition-colors">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header -->
+        <div class="text-center mb-12 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+                Chapter-Based Learning Path
+            </h1>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+                Master cybersecurity through our comprehensive 16-chapter curriculum designed with progressive difficulty and hands-on learning
+            </p>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="glass-effect rounded-xl p-6 mb-8 fade-in">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">Your Learning Progress</h2>
+                <div class="text-right">
+                    <div class="text-3xl font-bold text-emerald-400" id="overall-progress">0%</div>
+                    <div class="text-sm text-slate-400">Overall Completion</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-2">
+                        <svg class="progress-ring w-20 h-20">
+                            <circle cx="40" cy="40" r="36" stroke="#1e293b" stroke-width="8" fill="transparent"/>
+                            <circle id="level1-progress" cx="40" cy="40" r="36" stroke="#10b981" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226.19" stroke-dashoffset="226.19" class="progress-ring-circle"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center text-sm font-bold">1</div>
+                    </div>
+                    <div class="text-sm text-slate-400">Foundation</div>
+                </div>
+                <div class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-2">
+                        <svg class="progress-ring w-20 h-20">
+                            <circle cx="40" cy="40" r="36" stroke="#1e293b" stroke-width="8" fill="transparent"/>
+                            <circle id="level2-progress" cx="40" cy="40" r="36" stroke="#3b82f6" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226.19" stroke-dashoffset="226.19" class="progress-ring-circle"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center text-sm font-bold">2</div>
+                    </div>
+                    <div class="text-sm text-slate-400">Technical</div>
+                </div>
+                <div class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-2">
+                        <svg class="progress-ring w-20 h-20">
+                            <circle cx="40" cy="40" r="36" stroke="#1e293b" stroke-width="8" fill="transparent"/>
+                            <circle id="level3-progress" cx="40" cy="40" r="36" stroke="#8b5cf6" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226.19" stroke-dashoffset="226.19" class="progress-ring-circle"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center text-sm font-bold">3</div>
+                    </div>
+                    <div class="text-sm text-slate-400">Advanced</div>
+                </div>
+                <div class="text-center">
+                    <div class="relative w-20 h-20 mx-auto mb-2">
+                        <svg class="progress-ring w-20 h-20">
+                            <circle cx="40" cy="40" r="36" stroke="#1e293b" stroke-width="8" fill="transparent"/>
+                            <circle id="level4-progress" cx="40" cy="40" r="36" stroke="#f59e0b" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226.19" stroke-dashoffset="226.19" class="progress-ring-circle"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center text-sm font-bold">4</div>
+                    </div>
+                    <div class="text-sm text-slate-400">Leadership</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter Grid -->
+        <div id="chapters-container" class="space-y-8">
+            <!-- Chapters will be dynamically loaded here -->
+        </div>
+
+        <!-- Achievement Modal -->
+        <div id="achievement-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="glass-effect rounded-xl p-8 max-w-md mx-4 text-center">
+                <div class="text-6xl mb-4">🏆</div>
+                <h3 class="text-2xl font-bold mb-2 text-emerald-400">Chapter Completed!</h3>
+                <p class="text-slate-300 mb-6">Congratulations on completing this chapter. You're one step closer to cybersecurity mastery!</p>
+                <button onclick="closeAchievementModal()" class="bg-emerald-600 hover:bg-emerald-700 px-6 py-2 rounded-lg transition-colors">
+                    Continue Learning
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="chapter_content.js"></script>
+    <script src="chapter_system.js"></script>
+</body>
+</html>

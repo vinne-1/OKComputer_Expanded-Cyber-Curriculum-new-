@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Quiz - CyberGuard Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.179.1/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .vanta-canvas { position: fixed !important; top: 0; left: 0; z-index: -1; }
+        .glass-effect { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .option-card { transition: all 0.3s ease; cursor: pointer; }
+        .option-card:hover { background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; }
+        .option-card.selected { background: rgba(59, 130, 246, 0.2); border-color: #3b82f6; }
+        .option-card.correct { background: rgba(16, 185, 129, 0.2); border-color: #10b981; }
+        .option-card.incorrect { background: rgba(239, 68, 68, 0.2); border-color: #ef4444; }
+        .timer-ring { transform: rotate(-90deg); }
+        .timer-ring-circle { transition: stroke-dashoffset 1s linear; }
+        .fade-in { animation: fadeIn 0.6s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div id="vanta-bg" class="fixed inset-0 z-0"></div>
+    
+    <!-- Navigation -->
+    <nav class="relative z-10 glass-effect border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-shield-alt text-emerald-400 text-2xl"></i>
+                    <span class="text-xl font-bold">CyberGuard Academy</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="text-slate-300 hover:text-white transition-colors">Dashboard</a>
+                    <a href="chapters.html" class="text-slate-300 hover:text-white transition-colors">Chapters</a>
+                    <a href="resources.html" class="text-slate-300 hover:text-white transition-colors">Resources</a>
+                    <a href="profile.html" class="text-slate-300 hover:text-white transition-colors">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Quiz Header -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="glass-effect rounded-xl p-6 mb-8 fade-in">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h1 class="text-2xl font-bold" id="quiz-title">Cybersecurity Quiz</h1>
+                    <p class="text-slate-300" id="quiz-subtitle">Test your knowledge</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-3xl font-bold text-emerald-400" id="timer-display">00:00</div>
+                    <div class="text-sm text-slate-400">Time Remaining</div>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="w-full bg-slate-700 rounded-full h-2 mb-4">
+                <div id="progress-bar" class="bg-emerald-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+            
+            <div class="flex justify-between text-sm text-slate-400">
+                <span>Question <span id="current-question">1</span> of <span id="total-questions">10</span></span>
+                <span>Score: <span id="current-score" class="text-emerald-400">0</span>/<span id="max-score">0</span></span>
+            </div>
+        </div>
+
+        <!-- Quiz Content -->
+        <div id="quiz-container" class="glass-effect rounded-xl p-8 fade-in">
+            <!-- Question -->
+            <div class="mb-8">
+                <h2 id="question-text" class="text-xl font-semibold mb-4">Loading question...</h2>
+                <div id="question-image" class="mb-4 hidden">
+                    <img src="" alt="Question diagram" class="max-w-full h-auto rounded-lg">
+                </div>
+            </div>
+            
+            <!-- Options -->
+            <div id="options-container" class="space-y-4 mb-8">
+                <!-- Options will be dynamically loaded -->
+            </div>
+            
+            <!-- Navigation -->
+            <div class="flex justify-between items-center">
+                <button id="prev-btn" onclick="quizSystem.previousQuestion()" 
+                        class="bg-slate-700 hover:bg-slate-600 px-6 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i class="fas fa-arrow-left mr-2"></i>Previous
+                </button>
+                
+                <div class="text-center">
+                    <button id="submit-btn" onclick="quizSystem.submitAnswer()" 
+                            class="bg-emerald-600 hover:bg-emerald-700 px-8 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed hidden">
+                        Submit Answer
+                    </button>
+                </div>
+                
+                <button id="next-btn" onclick="quizSystem.nextQuestion()" 
+                        class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                    Next<i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="results-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="glass-effect rounded-xl p-8 max-w-md mx-4 text-center">
+                <div id="results-icon" class="text-6xl mb-4">🎉</div>
+                <h3 id="results-title" class="text-2xl font-bold mb-2">Quiz Complete!</h3>
+                <p id="results-message" class="text-slate-300 mb-6">Great job on completing the quiz!</p>
+                
+                <div class="bg-slate-800/50 rounded-lg p-4 mb-6">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <div class="text-slate-400">Score</div>
+                            <div id="final-score" class="text-2xl font-bold text-emerald-400">0%</div>
+                        </div>
+                        <div>
+                            <div class="text-slate-400">Time</div>
+                            <div id="final-time" class="text-2xl font-bold text-blue-400">0:00</div>
+                        </div>
+                        <div>
+                            <div class="text-slate-400">Correct</div>
+                            <div id="correct-answers" class="text-xl font-bold text-green-400">0/0</div>
+                        </div>
+                        <div>
+                            <div class="text-slate-400">Difficulty</div>
+                            <div id="difficulty-badge" class="text-xl font-bold text-yellow-400">Easy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <button onclick="quizSystem.retakeQuiz()" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg transition-colors flex-1">
+                        Retake Quiz
+                    </button>
+                    <button onclick="quizSystem.nextDifficulty()" class="bg-emerald-600 hover:bg-emerald-700 px-6 py-2 rounded-lg transition-colors flex-1">
+                        Next Level
+                    </button>
+                    <button onclick="quizSystem.backToChapters()" class="bg-slate-600 hover:bg-slate-700 px-6 py-2 rounded-lg transition-colors flex-1">
+                        Back to Chapters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz_system.js"></script>
+</body>
+</html>

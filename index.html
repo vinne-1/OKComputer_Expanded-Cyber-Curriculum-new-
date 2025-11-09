@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking to Cybersecurity Mastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            position: relative;
+        }
+        .vanta-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .resource-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .resource-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .level-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.4s ease;
+        }
+        .level-card:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: scale(1.02);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            height: 4px;
+            border-radius: 2px;
+            transition: width 0.8s ease;
+        }
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-2xl text-indigo-400"></i>
+                    <span class="text-xl font-bold">CyberMastery</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="chapters.html" class="text-indigo-400 font-medium">Chapters</a>
+                    <a href="resources.html" class="text-gray-300 hover:text-indigo-400 transition-colors">Resources</a>
+                    <a href="leaderboard.html" class="text-gray-300 hover:text-indigo-400 transition-colors">Leaderboard</a>
+                    <a href="#certifications" class="text-gray-300 hover:text-indigo-400 transition-colors">Certifications</a>
+                    <div id="user-menu" class="relative hidden">
+                        <button onclick="toggleUserMenu()" class="flex items-center space-x-2 text-slate-300 hover:text-white">
+                            <img id="user-avatar" src="" alt="Avatar" class="w-8 h-8 rounded-full">
+                            <span id="username">User</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="user-dropdown" class="absolute right-0 mt-2 w-48 bg-slate-800 rounded-lg shadow-lg border border-slate-700 hidden">
+                            <a href="profile.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 rounded-t-lg">Profile</a>
+                            <a href="settings.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700">Settings</a>
+                            <button onclick="authSystem.logout()" class="block w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-slate-700 rounded-b-lg">Logout</button>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="window.location.href='auth.html'" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Sign In
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center cyber-grid">
+        <div id="vanta-bg" class="vanta-canvas"></div>
+        <div class="hero-content w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="floating-element">
+                            <h1 class="text-5xl lg:text-7xl font-black leading-tight">
+                                From <span class="gradient-text">Networking</span>
+                                <br>to <span class="gradient-text">Cybersecurity</span>
+                                <br>Mastery
+                            </h1>
+                        </div>
+                        <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+                            Master the complete journey from networking fundamentals to advanced cybersecurity expertise. 
+                            Free resources, hands-on labs, and a structured 12-18 month learning path designed for 
+                            aspiring cybersecurity professionals.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-indigo-600 hover:bg-indigo-700 px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105" onclick="window.location.href='chapters.html'">
+                                <i class="fas fa-rocket mr-2"></i>Start Your Journey
+                            </button>
+                            <button class="border border-gray-600 hover:border-indigo-400 px-8 py-4 rounded-lg font-semibold transition-all" onclick="window.location.href='chapters.html'">
+                                <i class="fas fa-book mr-2"></i>Go to Chapters & Quizzes
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-3 gap-8 pt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-400">4</div>
+                                <div class="text-sm text-gray-400">Learning Levels</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-400">50+</div>
+                                <div class="text-sm text-gray-400">Free Resources</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-indigo-400">100+</div>
+                                <div class="text-sm text-gray-400">Hands-on Labs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="floating-element">
+                            <div class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 border border-gray-700">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="text-xl font-bold">Learning Progress</h3>
+                                    <i class="fas fa-chart-line text-indigo-400 text-2xl"></i>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm">Foundation</span>
+                                        <span class="text-xs text-gray-400">0%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2">
+                                        <div class="progress-bar w-0" id="progress-1"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm">Technical Skills</span>
+                                        <span class="text-xs text-gray-400">0%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2">
+                                        <div class="progress-bar w-0" id="progress-2"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm">Specialization</span>
+                                        <span class="text-xs text-gray-400">0%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2">
+                                        <div class="progress-bar w-0" id="progress-3"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm">Advanced</span>
+                                        <span class="text-xs text-gray-400">0%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-700 rounded-full h-2">
+                                        <div class="progress-bar w-0" id="progress-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Timeline -->
+    <section id="curriculum" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Learning Path</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    A structured 4-level progression from networking basics to advanced cybersecurity expertise, 
+                    with hands-on labs and real-world applications.
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-indigo-500 to-purple-500 hidden lg:block"></div>
+
+                <!-- Level 1: Foundation -->
+                <div class="timeline-item mb-16 lg:flex lg:items-center">
+                    <div class="lg:w-1/2 lg:pr-12">
+                        <div class="level-card rounded-2xl p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-xl font-bold mr-4">1</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Foundation Building</h3>
+                                    <p class="text-gray-400">3-4 months • Beginner Level</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Master the fundamentals of networking and basic IT concepts. Build a solid foundation 
+                                in computer networks, operating systems, and cybersecurity principles.
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 mb-6">
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-network-wired text-indigo-400 mr-2"></i>Networking Basics
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-layer-group text-indigo-400 mr-2"></i>OSI/TCP Models
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-server text-indigo-400 mr-2"></i>IP Addressing
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fab fa-linux text-indigo-400 mr-2"></i>Linux Basics
+                                </div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg text-sm transition-colors" onclick="showResources(1)">
+                                    <i class="fas fa-book mr-2"></i>View Resources
+                                </button>
+                                <button class="border border-gray-600 hover:border-indigo-400 px-4 py-2 rounded-lg text-sm transition-colors" onclick="startLevel(1)">
+                                    <i class="fas fa-play mr-2"></i>Start Level
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block lg:w-1/2 lg:pl-12">
+                        <div class="resource-card rounded-xl p-6">
+                            <h4 class="text-lg font-semibold mb-4">Featured Resources</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fab fa-youtube text-red-500"></i>
+                                    <span class="text-sm">NetworkChuck CCNA Playlist</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-graduation-cap text-blue-500"></i>
+                                    <span class="text-sm">Cybrary Cisco Networking</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-flask text-green-500"></i>
+                                    <span class="text-sm">Cisco Packet Tracer Labs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 2: Technical Skills -->
+                <div class="timeline-item mb-16 lg:flex lg:items-center">
+                    <div class="hidden lg:block lg:w-1/2 lg:pr-12">
+                        <div class="resource-card rounded-xl p-6">
+                            <h4 class="text-lg font-semibold mb-4">Featured Resources</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-shield-alt text-blue-500"></i>
+                                    <span class="text-sm">CompTIA Security+ Training</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fab fa-python text-yellow-500"></i>
+                                    <span class="text-sm">Python for Security</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-terminal text-green-500"></i>
+                                    <span class="text-sm">Linux System Admin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12">
+                        <div class="level-card rounded-2xl p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-xl font-bold mr-4">2</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Technical Skills Development</h3>
+                                    <p class="text-gray-400">4-5 months • Intermediate Level</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Develop practical networking and security skills. Learn advanced protocols, 
+                                system administration, and basic scripting for cybersecurity tasks.
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 mb-6">
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-shield-alt text-purple-400 mr-2"></i>Network Security
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fab fa-python text-purple-400 mr-2"></i>Python Scripting
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-cog text-purple-400 mr-2"></i>System Admin
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-search text-purple-400 mr-2"></i>Vulnerability Scanning
+                                </div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm transition-colors" onclick="showResources(2)">
+                                    <i class="fas fa-book mr-2"></i>View Resources
+                                </button>
+                                <button class="border border-gray-600 hover:border-purple-400 px-4 py-2 rounded-lg text-sm transition-colors" onclick="startLevel(2)">
+                                    <i class="fas fa-play mr-2"></i>Start Level
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 3: Specialization -->
+                <div class="timeline-item mb-16 lg:flex lg:items-center">
+                    <div class="lg:w-1/2 lg:pr-12">
+                        <div class="level-card rounded-2xl p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-xl font-bold mr-4">3</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Security Specialization</h3>
+                                    <p class="text-gray-400">3-4 months • Advanced Level</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Focus on specific cybersecurity domains. Choose your specialization path 
+                                in offensive security, defensive security, or digital forensics.
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 mb-6">
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-bug text-pink-400 mr-2"></i>Penetration Testing
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-search text-pink-400 mr-2"></i>Digital Forensics
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-eye text-pink-400 mr-2"></i>Threat Hunting
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-lock text-pink-400 mr-2"></i>Malware Analysis
+                                </div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <button class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg text-sm transition-colors" onclick="showResources(3)">
+                                    <i class="fas fa-book mr-2"></i>View Resources
+                                </button>
+                                <button class="border border-gray-600 hover:border-pink-400 px-4 py-2 rounded-lg text-sm transition-colors" onclick="startLevel(3)">
+                                    <i class="fas fa-play mr-2"></i>Start Level
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block lg:w-1/2 lg:pl-12">
+                        <div class="resource-card rounded-xl p-6">
+                            <h4 class="text-lg font-semibold mb-4">Featured Resources</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-bug text-red-500"></i>
+                                    <span class="text-sm">OWASP Top 10 Labs</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-search text-blue-500"></i>
+                                    <span class="text-sm">Blue Team Challenges</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-microscope text-green-500"></i>
+                                    <span class="text-sm">Malware Analysis Tools</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 4: Advanced -->
+                <div class="timeline-item mb-16 lg:flex lg:items-center">
+                    <div class="hidden lg:block lg:w-1/2 lg:pr-12">
+                        <div class="resource-card rounded-xl p-6">
+                            <h4 class="text-lg font-semibold mb-4">Featured Resources</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-cloud text-blue-500"></i>
+                                    <span class="text-sm">Cloud Security Training</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-industry text-orange-500"></i>
+                                    <span class="text-sm">ICS Security Labs</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-chart-line text-green-500"></i>
+                                    <span class="text-sm">Threat Intelligence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12">
+                        <div class="level-card rounded-2xl p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-xl font-bold mr-4">4</div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">Advanced Mastery</h3>
+                                    <p class="text-gray-400">2-3 months • Expert Level</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-6">
+                                Advanced techniques and professional-level skills. Master enterprise security, 
+                                cloud security, and specialized cybersecurity domains.
+                            </p>
+                            <div class="grid grid-cols-2 gap-3 mb-6">
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-cloud text-cyan-400 mr-2"></i>Cloud Security
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-industry text-cyan-400 mr-2"></i>ICS/SCADA
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-chart-line text-cyan-400 mr-2"></i>Threat Intelligence
+                                </div>
+                                <div class="bg-gray-800/50 rounded-lg p-3 text-sm">
+                                    <i class="fas fa-cogs text-cyan-400 mr-2"></i>SOC Operations
+                                </div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <button class="bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg text-sm transition-colors" onclick="showResources(4)">
+                                    <i class="fas fa-book mr-2"></i>View Resources
+                                </button>
+                                <button class="border border-gray-600 hover:border-cyan-400 px-4 py-2 rounded-lg text-sm transition-colors" onclick="startLevel(4)">
+                                    <i class="fas fa-play mr-2"></i>Start Level
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Industry Certifications</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Validate your skills with industry-recognized certifications that employers trust.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-network-wired text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">CompTIA Network+</h3>
+                    <p class="text-gray-400 text-sm mb-4">Networking fundamentals certification</p>
+                    <div class="text-2xl font-bold text-blue-400 mb-2">$370</div>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-lg transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">CompTIA Security+</h3>
+                    <p class="text-gray-400 text-sm mb-4">Core cybersecurity skills</p>
+                    <div class="text-2xl font-bold text-green-400 mb-2">$392</div>
+                    <button class="w-full bg-green-600 hover:bg-green-700 py-2 rounded-lg transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bug text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">CEH</h3>
+                    <p class="text-gray-400 text-sm mb-4">Certified Ethical Hacker</p>
+                    <div class="text-2xl font-bold text-red-400 mb-2">$1,199</div>
+                    <button class="w-full bg-red-600 hover:bg-red-700 py-2 rounded-lg transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-terminal text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">OSCP</h3>
+                    <p class="text-gray-400 text-sm mb-4">Offensive Security Certified Professional</p>
+                    <div class="text-2xl font-bold text-purple-400 mb-2">$1,599</div>
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 py-2 rounded-lg transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Join the Community</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Connect with fellow learners, share your progress, and get support from the cybersecurity community.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="resource-card rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-discord text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Discord Community</h3>
+                    <p class="text-gray-400 mb-6">
+                        Join our active Discord server for real-time discussions, study groups, and mentorship.
+                    </p>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold transition-colors">
+                        Join Discord
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-reddit text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Reddit Forum</h3>
+                    <p class="text-gray-400 mb-6">
+                        Participate in discussions, share resources, and get advice from experienced professionals.
+                    </p>
+                    <button class="w-full bg-orange-600 hover:bg-orange-700 py-3 rounded-lg font-semibold transition-colors">
+                        Join Reddit
+                    </button>
+                </div>
+
+                <div class="resource-card rounded-xl p-8 text-center">
+                    <div class="w-20 h-20 bg-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-linkedin text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">LinkedIn Network</h3>
+                    <p class="text-gray-400 mb-6">
+                        Connect with cybersecurity professionals and stay updated with industry trends.
+                    </p>
+                    <button class="w-full bg-blue-700 hover:bg-blue-800 py-3 rounded-lg font-semibold transition-colors">
+                        Connect on LinkedIn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fas fa-shield-alt text-2xl text-indigo-400"></i>
+                    <span class="text-2xl font-bold">CyberMastery</span>
+                </div>
+                <p class="text-gray-400 mb-6">
+                    Empowering the next generation of cybersecurity professionals with free, structured learning.
+                </p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm">
+                    © 2025 CyberMastery. Built for the cybersecurity community.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Resource Modal -->
+    <div id="resourceModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 id="modalTitle" class="text-2xl font-bold">Level Resources</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div id="modalContent" class="space-y-6">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

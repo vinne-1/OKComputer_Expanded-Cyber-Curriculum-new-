@@ -1,0 +1,258 @@
+{
+  "curriculum": {
+    "title": "Networking to Cybersecurity Mastery",
+    "description": "A comprehensive learning path from networking fundamentals to advanced cybersecurity expertise",
+    "duration": "12-18 months",
+    "levels": [
+      {
+        "level": 1,
+        "title": "Foundation Building",
+        "duration": "3-4 months",
+        "description": "Master the fundamentals of networking and basic IT concepts",
+        "topics": [
+          "Computer Networking Basics",
+          "OSI and TCP/IP Models",
+          "IP Addressing and Subnetting",
+          "Network Devices (Routers, Switches, Firewalls)",
+          "Basic Linux and Windows Commands",
+          "Introduction to Cybersecurity Concepts"
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "NetworkChuck - CCNA Playlist",
+              "url": "https://www.youtube.com/playlist?list=PLIhvCqeVj4n5n4YfX8U0d9d9Mn8mLQsHR",
+              "description": "Comprehensive CCNA networking fundamentals"
+            },
+            {
+              "title": "Professor Messer - Network+ Training",
+              "url": "https://www.youtube.com/playlist?list=PLG49S3nxzabmK6pxr5mxFzSMg1wX2Q-ek",
+              "description": "Free Network+ certification training course"
+            }
+          ],
+          "courses": [
+            {
+              "title": "Cisco Networking Basics",
+              "platform": "Cybrary",
+              "url": "https://www.cybrary.it/course/cisco-networking-fundamentals",
+              "description": "Free introduction to Cisco networking concepts"
+            },
+            {
+              "title": "Introduction to Computer Networks",
+              "platform": "Coursera",
+              "url": "https://www.coursera.org/learn/computer-networking",
+              "description": "University-level networking fundamentals"
+            }
+          ],
+          "labs": [
+            {
+              "title": "Cisco Packet Tracer",
+              "url": "https://www.netacad.com/courses/packet-tracer",
+              "description": "Free network simulation tool from Cisco"
+            },
+            {
+              "title": "TryHackMe - Networking Basics",
+              "url": "https://tryhackme.com/room/networking101",
+              "description": "Interactive networking fundamentals"
+            }
+          ]
+        }
+      },
+      {
+        "level": 2,
+        "title": "Technical Skills Development",
+        "duration": "4-5 months", 
+        "description": "Develop practical networking and security skills",
+        "topics": [
+          "Advanced Networking Protocols",
+          "Network Security Fundamentals",
+          "Linux System Administration",
+          "Windows Server Management",
+          "Basic Scripting (Python/Bash)",
+          "Security Tools Introduction",
+          "Vulnerability Assessment Basics"
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "The Cyber Mentor - Linux for Hackers",
+              "url": "https://www.youtube.com/playlist?list=PLIhvCqeVj4n5n4YfX8U0d9d9Mn8mLQsHR",
+              "description": "Essential Linux skills for cybersecurity"
+            },
+            {
+              "title": "John Hammond - Python for Security",
+              "url": "https://www.youtube.com/playlist?list=PLx4x_zx8vUo8J-2-g4GJrxjYnxz1nn6oi",
+              "description": "Python scripting for cybersecurity tasks"
+            }
+          ],
+          "courses": [
+            {
+              "title": "CompTIA Security+ SY0-701",
+              "platform": "Professor Messer",
+              "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video-course/",
+              "description": "Free Security+ certification training"
+            },
+            {
+              "title": "Linux System Administration",
+              "platform": "Linux Foundation",
+              "url": "https://training.linuxfoundation.org/training/linux-system-administration/",
+              "description": "Free Linux admin fundamentals"
+            }
+          ],
+          "labs": [
+            {
+              "title": "TryHackMe - Linux Fundamentals",
+              "url": "https://tryhackme.com/room/linuxfundamentals",
+              "description": "Hands-on Linux learning"
+            },
+            {
+              "title": "Hack The Box - Starting Point",
+              "url": "https://www.hackthebox.com/starting-point",
+              "description": "Beginner-friendly penetration testing"
+            }
+          ]
+        }
+      },
+      {
+        "level": 3,
+        "title": "Security Specialization",
+        "duration": "3-4 months",
+        "description": "Focus on specific cybersecurity domains and advanced techniques",
+        "topics": [
+          "Ethical Hacking and Penetration Testing",
+          "Digital Forensics and Incident Response",
+          "Network Security Monitoring",
+          "Malware Analysis Basics",
+          "Web Application Security",
+          "Cryptography and PKI",
+          "Security Architecture and Design"
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "STÖK - Web Application Security",
+              "url": "https://www.youtube.com/playlist?list=PLIhvCqeVj4n5n4YfX8U0d9d9Mn8mLQsHR",
+              "description": "Advanced web security concepts"
+            },
+            {
+              "title": "IppSec - HackTheBox Walkthroughs",
+              "url": "https://www.youtube.com/playlist?list=PLIhvCqeVj4n5n4YfX8U0d9d9Mn8mLQsHR",
+              "description": "Penetration testing techniques"
+            }
+          ],
+          "courses": [
+            {
+              "title": "Ethical Hacking Essentials",
+              "platform": "SANS Cyber Aces",
+              "url": "https://cyberaces.org/courses/",
+              "description": "Free ethical hacking fundamentals"
+            },
+            {
+              "title": "Digital Forensics Basics",
+              "platform": "Cybrary",
+              "url": "https://www.cybrary.it/course/digital-forensics",
+              "description": "Introduction to digital forensics"
+            }
+          ],
+          "labs": [
+            {
+              "title": "TryHackMe - OWASP Top 10",
+              "url": "https://tryhackme.com/room/owasptop10",
+              "description": "Web application security vulnerabilities"
+            },
+            {
+              "title": "CyberDefenders - Blue Team Labs",
+              "url": "https://cyberdefenders.org/",
+              "description": "Defensive security challenges"
+            }
+          ]
+        }
+      },
+      {
+        "level": 4,
+        "title": "Advanced Mastery",
+        "duration": "2-3 months",
+        "description": "Advanced techniques and professional-level skills",
+        "topics": [
+          "Advanced Persistent Threats (APT)",
+          "Cloud Security and DevSecOps",
+          "Industrial Control Systems (ICS) Security",
+          "Advanced Malware Analysis",
+          "Threat Hunting and Intelligence",
+          "Security Operations Center (SOC) Management",
+          "Compliance and Governance"
+        ],
+        "resources": {
+          "youtube": [
+            {
+              "title": "SANS DFIR - Digital Forensics",
+              "url": "https://www.youtube.com/playlist?list=PLIhvCqeVj4n5n4YfX8U0d9d9Mn8mLQsHR",
+              "description": "Advanced digital forensics techniques"
+            },
+            {
+              "title": "Black Hat - Conference Talks",
+              "url": "https://www.youtube.com/playlist?list=PLIhvCqeVj4n5n4YfX8U0d9d9Mn8mLQsHR",
+              "description": "Latest cybersecurity research and trends"
+            }
+          ],
+          "courses": [
+            {
+              "title": "Advanced Cybersecurity Training",
+              "platform": "MIT OpenCourseWare",
+              "url": "https://ocw.mit.edu/courses/cybersecurity/",
+              "description": "University-level cybersecurity courses"
+            },
+            {
+              "title": "Cloud Security Fundamentals",
+              "platform": "Cloud Security Alliance",
+              "url": "https://cloudsecurityalliance.org/education/",
+              "description": "Cloud security best practices"
+            }
+          ],
+          "labs": [
+            {
+              "title": "AttackDefense - Advanced Labs",
+              "url": "https://attackdefense.com/",
+              "description": "1800+ cybersecurity lab exercises"
+            },
+            {
+              "title": "RangeForce - SOC Training",
+              "url": "https://rangeforce.com/",
+              "description": "Security operations center simulation"
+            }
+          ]
+        }
+      }
+    ],
+    "certifications": [
+      {
+        "name": "CompTIA Network+",
+        "level": "Foundation",
+        "description": "Networking fundamentals certification",
+        "cost": "$370",
+        "prerequisites": "None"
+      },
+      {
+        "name": "CompTIA Security+",
+        "level": "Intermediate",
+        "description": "Core cybersecurity skills certification",
+        "cost": "$392",
+        "prerequisites": "Network+ recommended"
+      },
+      {
+        "name": "Certified Ethical Hacker (CEH)",
+        "level": "Advanced",
+        "description": "Ethical hacking and penetration testing",
+        "cost": "$1,199",
+        "prerequisites": "2 years experience recommended"
+      },
+      {
+        "name": "Offensive Security Certified Professional (OSCP)",
+        "level": "Expert",
+        "description": "Hands-on penetration testing certification",
+        "cost": "$1,599",
+        "prerequisites": "Advanced technical skills"
+      }
+    ]
+  }
+}
