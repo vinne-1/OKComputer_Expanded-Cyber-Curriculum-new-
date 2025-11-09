@@ -1,249 +1,326 @@
-# CyberGuard Academy - Enhanced Cybersecurity Learning Platform
+# CyberGuard Academy — Enhanced Cybersecurity Learning Platform
 
-## Overview
+[![Static Site](https://img.shields.io/badge/type-static_site-blue)](#)
+[![Built with](https://img.shields.io/badge/built_with-HTML5%20%7C%20CSS%20%7C%20JavaScript-orange)](#)
+[![Status](https://img.shields.io/badge/status-active-brightgreen)](#)
+[![Scope](https://img.shields.io/badge/modules-16%20chapters%20%7C%204%20levels-6f42c1)](#)
 
-CyberGuard Academy is a comprehensive, chapter-based cybersecurity learning platform that provides structured education through 16 detailed chapters across 4 progressive levels. The platform features interactive quizzes, progress tracking, and a rich resource library to help users master cybersecurity concepts from foundation to advanced leadership.
+A comprehensive, chapter‑based learning platform for cybersecurity. Progress through **16 chapters** across **4 levels**, take **difficulty‑tiered quizzes**, track achievements, and explore a curated **resource library**—all in a fast, privacy‑friendly static site.
 
-## Key Features
+---
 
-### 📚 Chapter-Based Learning Structure
-- **16 comprehensive chapters** organized across 4 levels
-- **Progressive difficulty** from Easy → Medium → Hard for each chapter
-- **Detailed learning objectives** and topic coverage for each chapter
-- **Estimated completion times** to help with study planning
+## Table of Contents
 
-### 🎯 Interactive Quiz System
-- **Progressive difficulty quizzes** for each chapter
-- **Real-time feedback** with detailed explanations
-- **Timer-based challenges** to simulate exam conditions
-- **Multiple question types** including multiple choice and scenario-based questions
-- **Comprehensive question database** with 100+ questions across all levels
+- [Highlights](#highlights)
+- [Learning Path](#learning-path)
+- [Architecture Overview](#architecture-overview)
+- [File Structure](#file-structure)
+- [Getting Started](#getting-started)
+- [Usage Guide](#usage-guide)
+- [Quiz System](#quiz-system)
+- [Progress & Achievements](#progress--achievements)
+- [Resources Library](#resources-library)
+- [Configuration (JSON Data)](#configuration-json-data)
+- [Accessibility & Performance](#accessibility--performance)
+- [Security & Privacy](#security--privacy)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Support & Troubleshooting](#support--troubleshooting)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-### 📊 Progress Tracking & Analytics
-- **Visual progress indicators** for levels and chapters
-- **Achievement system** with unlockable badges
-- **Study time tracking** and resource access history
-- **Performance analytics** with detailed quiz results
+---
 
-### 🛡️ Rich Learning Resources
-- **127+ verified resources** including YouTube videos, courses, labs, and tools
-- **Resource categorization** by type and difficulty level
-- **Community favorites** and trending resources
-- **Advanced filtering** and search capabilities
+## Highlights
 
-## Learning Path Structure
+### 📚 Chapter‑Based Learning
+- **16 chapters** grouped into **4 progressive levels**
+- Clear **learning objectives**, topic coverage, and **estimated times**
+- Difficulty curves per chapter (Easy → Medium → Hard)
 
-### Level 1: Foundation Building (Chapters 1-4)
-1. **Cybersecurity Fundamentals** - CIA Triad, threats, malware types
-2. **Networking Essentials** - OSI model, protocols, network security
-3. **Risk Management & Governance** - Risk assessment, compliance frameworks
-4. **Security Tools & Technologies** - Essential tools, cryptography basics
+### 🎯 Quizzes with Feedback
+- Difficulty‑tiered question sets with **immediate explanations**
+- **Timer** options to simulate exam pressure
+- Mixed question types: MCQ, scenario, “apply the concept”
 
-### Level 2: Technical Implementation (Chapters 5-8)
-5. **System Hardening & Configuration** - OS security, application security
-6. **Network Security Controls** - Firewalls, IDS/IPS, network segmentation
-7. **Cryptography & PKI** - Encryption algorithms, digital certificates
-8. **Identity & Access Management** - Authentication, authorization, IAM systems
+### 📊 Progress & Analytics
+- Local **progress tracking** and **achievement badges**
+- Level/Chapter completion indicators
+- Quiz performance history and study time hints
 
-### Level 3: Advanced Defense (Chapters 9-12)
-9. **Security Operations Center (SOC)** - SOC design, SIEM, incident response
-10. **Threat Hunting & Intelligence** - Proactive threat detection, APT analysis
-11. **Digital Forensics & Incident Response** - Forensic analysis, malware analysis
-12. **Advanced Persistent Threats** - APT tactics, detection, countermeasures
+### 🛡️ Curated Resources
+- **100+ vetted links**: videos, courses, hands‑on labs, tools
+- Powerful **filtering/search** and quick‑add to favorites
 
-### Level 4: Strategic Leadership (Chapters 13-16)
-13. **Enterprise Security Architecture** - Security frameworks, zero-trust architecture
-14. **Cybersecurity Governance & Compliance** - Risk management, regulatory compliance
-15. **Cybersecurity Program Management** - Security metrics, budget management
-16. **Emerging Threats & Future Technologies** - AI security, quantum computing, IoT security
+### 🧰 Admin & Utilities (optional modules)
+- Basic **admin** and **auth** pages for future multi‑user flows
+- Leaderboard scaffolding for classroom or cohort use
 
-## Technical Implementation
+---
 
-### Frontend Technologies
-- **HTML5** with semantic markup
-- **Tailwind CSS** for responsive design
-- **Vanilla JavaScript** for core functionality
-- **Vanta.js** for interactive backgrounds
-- **Font Awesome** for icons
+## Learning Path
 
-### Interactive Features
-- **Real-time progress tracking** with localStorage persistence
-- **Dynamic quiz generation** with difficulty-based question selection
-- **Achievement system** with visual progress indicators
-- **Resource filtering** and search functionality
-- **Responsive design** for mobile and desktop
+### Level 1 — Foundation Building (1–4)
+1. **Cybersecurity Fundamentals** – CIA triad, threat landscape, malware basics  
+2. **Networking Essentials** – OSI/TCP‑IP, protocols, basic hardening  
+3. **Risk & Governance** – Risk assessment, security policies, frameworks  
+4. **Tools & Crypto Basics** – Core security tooling, crypto fundamentals
 
-### Data Management
-- **JSON-based configuration** for curriculum structure
-- **Local storage** for user progress and preferences
-- **Session storage** for quiz context and temporary data
-- **Progressive enhancement** for accessibility
+### Level 2 — Technical Implementation (5–8)
+5. **System Hardening** – OS/app hardening, baselines, patching  
+6. **Network Security Controls** – Firewalls, IDS/IPS, segmentation  
+7. **Cryptography & PKI** – Ciphers, TLS/SSL, certificates, revocation  
+8. **Identity & Access Mgmt** – AuthN/AuthZ, SSO, IAM workflows
+
+### Level 3 — Advanced Defense (9–12)
+9. **SOC Operations** – SIEM, alerting, triage, IR runbooks  
+10. **Threat Hunting & Intel** – Hypotheses, hunts, intel feeds, APTs  
+11. **DFIR** – Acquisition, forensics, chain of custody, malware basics  
+12. **Advanced Threats** – TTPs, detections, countermeasures
+
+### Level 4 — Strategic Leadership (13–16)
+13. **Enterprise Security Architecture** – Zero‑Trust, reference models  
+14. **Governance & Compliance** – Risk, regulatory mapping, audits  
+15. **Program Management** – Metrics, budgets, stakeholder comms  
+16. **Emerging Tech & Future** – AI/ML, IoT/OT, cloud, post‑quantum
+
+---
+
+## Architecture Overview
+
+- **Frontend only (static site):** HTML + CSS (Tailwind) + Vanilla JS  
+- **Pages:** `index.html` (dashboard), `chapters.html`, `quiz.html`, `resources.html`, optional `leaderboard.html`, `admin.html`, `auth.html`, and `enhanced_index.html` variant
+- **State:** Browser Local Storage for progress/achievements; Session Storage for quiz context
+- **Data:** JSON files for curriculum & resources; quiz DB embedded in `quiz_system.js`
+- **UX libraries:** Vanta.js (visuals), Font Awesome (icons)
+
+> _No backend is required. If you later add one (for cloud sync or accounts), ensure privacy notices and consent._
+
+---
 
 ## File Structure
 
 ```
-/mnt/okcomputer/output/
-├── index.html              # Main dashboard and landing page
-├── chapters.html           # Chapter overview and navigation
-├── quiz.html              # Interactive quiz interface
-├── resources.html          # Comprehensive resource library
-├── fixed_main.js          # Core application logic
-├── chapter_system.js      # Chapter management system
-├── quiz_system.js         # Quiz engine and question database
-├── chapter_curriculum.json # Curriculum structure and metadata
-├── quiz_database.json     # Question database (integrated in quiz_system.js)
-└── README.md              # This documentation file
+.
+├─ index.html                   # Dashboard / Landing
+├─ enhanced_index.html          # Optional enhanced landing
+├─ chapters.html                # Chapters overview & deep links
+├─ quiz.html                    # Quiz interface
+├─ resources.html               # Resource library
+├─ enhanced_resources.html      # Optional enhanced resources UI
+├─ leaderboard.html             # Leaderboard (optional)
+├─ admin.html                   # Admin (optional)
+├─ auth.html                    # Authentication (optional)
+│
+├─ main.js                      # Core app bootstrap
+├─ fixed_main.js                # Stable main logic variant
+├─ enhanced_main.js             # Enhanced dashboard logic
+├─ chapter_system.js            # Chapter navigation + state
+├─ quiz_system.js               # Quiz logic (includes question DB)
+├─ resources.js                 # Resource catalog logic
+├─ enhanced_resources.js        # Enhanced resources UX
+├─ leaderboard_system.js        # Leaderboard logic
+├─ admin_system.js              # Admin logic
+├─ auth_system.js               # Auth logic
+│
+├─ chapter_curriculum.json      # Chapter metadata + mapping
+├─ curriculum_structure.json    # High‑level structure
+├─ expanded_curriculum.json     # Rich resource catalog
+│
+└─ README.md                    # You’re here
 ```
+
+> **Note:** Some environments block `fetch()` of local JSON over `file://`. Run a local web server for a smooth experience.
+
+---
 
 ## Getting Started
 
 ### Prerequisites
-- Modern web browser with JavaScript enabled
-- Local web server (optional, for development)
+- Modern browser (Chrome 90+, Firefox 88+, Edge 90+, Safari 14+)
+- **Recommended:** Local HTTP server (one of):
+  - Python: `python -m http.server 8000`
+  - Node: `npx http-server -p 8000`
+  - VS Code: _Live Server_ extension
 
-### Installation
-1. Clone or download the project files
-2. Ensure all files are in the same directory
-3. Open `index.html` in a web browser, or
-4. Serve via local web server: `python -m http.server 8000`
-
-### Usage
-1. **Start Learning**: Navigate through the dashboard to explore available levels
-2. **Access Chapters**: Click on any level to view detailed chapter breakdown
-3. **Take Quizzes**: Complete quizzes at Easy, Medium, and Hard difficulties
-4. **Track Progress**: Monitor your advancement through visual progress indicators
-5. **Explore Resources**: Access curated learning materials and tools
-
-## Quiz System Features
-
-### Difficulty Levels
-- **Easy**: 8-10 questions, 75% passing score, 15-20 minutes
-- **Medium**: 12-18 questions, 80% passing score, 20-28 minutes  
-- **Hard**: 15-24 questions, 85% passing score, 25-40 minutes
-
-### Question Types
-- Multiple choice questions with 4 options
-- Scenario-based problem solving
-- Technical concept application
-- Security best practices identification
-
-### Feedback System
-- Immediate answer feedback with explanations
-- Detailed performance analytics
-- Progress recommendations based on results
-- Retake options for improvement
-
-## Progress Tracking
-
-### Achievement System
-- **First Steps**: Complete your first quiz
-- **Foundation Master**: Complete Level 1
-- **Chapter Explorer**: Complete 4 chapters
-- **Difficulty Master**: Complete a hard quiz
-- **Quiz Warrior**: Complete 5 quizzes
-- **Cyber Guardian**: Complete all levels
-
-### Progress Metrics
-- Chapter completion percentage
-- Quiz success rates by difficulty
-- Resource access and engagement
-- Study time tracking
-- Overall platform progression
-
-## Resource Library
-
-### Content Categories
-- **YouTube Videos**: Educational playlists and tutorials
-- **Online Courses**: Structured learning programs
-- **Hands-on Labs**: Practical exercises and simulations
-- **Security Tools**: Industry-standard software and utilities
-
-### Resource Features
-- Verified links and quality assurance
-- Difficulty level indicators
-- Community ratings and favorites
-- Progress tracking integration
-- Advanced filtering options
-
-## Browser Compatibility
-
-### Supported Browsers
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-### Required Features
-- JavaScript ES6+ support
-- Local Storage API
-- CSS Grid and Flexbox
-- Web Audio API (for optional sound effects)
-
-## Performance Considerations
-
-### Optimization Features
-- Lazy loading of quiz questions
-- Efficient DOM manipulation
-- Minimal external dependencies
-- Optimized image assets
-- Progressive enhancement approach
-
-### Accessibility
-- Semantic HTML structure
-- ARIA labels and descriptions
-- Keyboard navigation support
-- High contrast color schemes
-- Screen reader compatibility
-
-## Future Enhancements
-
-### Planned Features
-- User account system with cloud sync
-- Advanced analytics and reporting
-- Collaborative learning features
-- Mobile application
-- Integration with external learning platforms
-- Certification exam preparation
-- Industry mentor connections
-
-### Technical Roadmap
-- Backend API development
-- Database integration
-- Real-time collaboration features
-- Advanced AI-powered recommendations
-- Virtual lab environments
-- Interactive coding exercises
-
-## Contributing
-
-This platform is designed for educational purposes. Contributions and improvements are welcome:
-
-1. Fork the repository
-2. Create a feature branch
-3. Implement enhancements
-4. Test thoroughly
-5. Submit pull request
-
-## License
-
-This project is created for educational purposes. All external resources and materials maintain their original licenses.
-
-## Support
-
-For technical issues or questions:
-1. Check browser console for error messages
-2. Ensure JavaScript is enabled
-3. Try refreshing the page or clearing local storage
-4. Verify all files are properly loaded
-
-## Acknowledgments
-
-- Cybersecurity community for resource contributions
-- Open-source libraries and frameworks
-- Educational content creators
-- Industry professionals who provided guidance
+### Quick Start
+```bash
+# from the project root
+python -m http.server 8000
+# open in your browser:
+#   http://localhost:8000/index.html
+# or:
+#   http://localhost:8000/enhanced_index.html
+```
 
 ---
 
-**Start your cybersecurity learning journey today with CyberGuard Academy!** 🛡️#   O K C o m p u t e r _ E x p a n d e d - C y b e r - C u r r i c u l u m - n e w -  
- 
+## Usage Guide
+
+1. **Dashboard → Chapters**: Explore levels/chapters, read objectives, check estimated time.  
+2. **Take Quizzes**: Launch Easy/Medium/Hard sets from each chapter; timer optional.  
+3. **Track Progress**: Progress & achievements persist locally in your browser.  
+4. **Use Resources**: Filter/search resources by level, type, topic, difficulty.  
+5. **(Optional) Admin/Auth/Leaderboard**: Experimental pages for future cohorts.
+
+---
+
+## Quiz System
+
+- **Easy:** 8–10 Qs, pass ≥ 75%, 15–20 min  
+- **Medium:** 12–18 Qs, pass ≥ 80%, 20–28 min  
+- **Hard:** 15–24 Qs, pass ≥ 85%, 25–40 min
+
+**Question Types:** MCQ, scenario, applied concepts, best practices.  
+**Feedback:** Immediate explanation + result summary.  
+**Persistence:** Results recorded locally for analytics and badges.
+
+---
+
+## Progress & Achievements
+
+Badges you can unlock:
+- **First Steps** – First quiz completed  
+- **Foundation Master** – Level 1 completed  
+- **Chapter Explorer** – 4 chapters completed  
+- **Difficulty Master** – Any Hard quiz passed  
+- **Quiz Warrior** – 5 quizzes completed  
+- **Cyber Guardian** – All levels completed
+
+_Reset progress_: clear this site’s data via your browser (Site Settings → Clear data).
+
+---
+
+## Resources Library
+
+- 100+ vetted items (videos, courses, labs, tools)  
+- Filter by **type**, **level**, **topic**, **difficulty**  
+- Save favorites and track what you’ve opened
+
+_Tip_: Use the search bar for quick matches (e.g., “SIEM”, “PKI”, “DFIR”).
+
+---
+
+## Configuration (JSON Data)
+
+This project reads JSON files to render chapters and resources. Keep your JSON **valid**.
+
+### `chapter_curriculum.json` (example)
+```json
+{
+  "levels": [
+    {
+      "id": 1,
+      "title": "Foundation Building",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "Cybersecurity Fundamentals",
+          "objectives": ["CIA Triad", "Threats", "Malware"],
+          "estimatedMinutes": 45
+        }
+      ]
+    }
+  ]
+}
+```
+
+### `expanded_curriculum.json` (example)
+```json
+{
+  "resources": [
+    {
+      "id": "vid-osi-overview",
+      "type": "video",
+      "level": 1,
+      "chapter": 2,
+      "title": "OSI Model Explained",
+      "url": "https://example.com/osi",
+      "difficulty": "easy",
+      "tags": ["networking", "osi", "basics"]
+    }
+  ]
+}
+```
+
+> The quiz database is bundled inside `quiz_system.js` by default.
+
+---
+
+## Accessibility & Performance
+
+- **Semantic HTML**, ARIA labels, keyboard navigation  
+- High‑contrast palettes; responsive layouts (CSS Grid/Flex)  
+- Lazy loading where possible; minimal dependencies  
+- Works offline once loaded (static assets + local state)
+
+---
+
+## Security & Privacy
+
+- No backend by default; **no data leaves your browser**  
+- Progress, preferences, and analytics stored in **Local Storage**  
+- If you deploy a backend later, add consent & privacy notices
+
+---
+
+## Roadmap
+
+- Cloud sync for progress & profiles  
+- Advanced analytics/export dashboards  
+- Cohort collaboration & leaderboards  
+- Mobile‑first PWA  
+- LMS integrations  
+- Certification prep tracks (mock exams)  
+- Virtual labs & interactive coding
+
+---
+
+## Contributing
+
+1. Fork the repo  
+2. Create a feature branch: `git checkout -b feat/awesome`  
+3. Commit: `git commit -m "feat: add awesome thing"`  
+4. Push: `git push -u origin feat/awesome`  
+5. Open a Pull Request
+
+_Code style_: small functions, documented modules, composable patterns.
+
+---
+
+## Support & Troubleshooting
+
+**JSON won’t load locally**  
+- Don’t open via `file://`. Run a local server (see _Getting Started_).
+
+**Progress didn’t update**  
+- Hard refresh; ensure Local Storage isn’t blocked.
+
+**README case didn’t change on Windows**  
+```bash
+git mv -f README.md tmp && git commit -m "temp rename"
+git mv -f tmp README.md && git commit -m "rename back"
+git push
+```
+
+**Where to start?**  
+- Open `index.html` (or `enhanced_index.html` if present) and follow the dashboard.
+
+---
+
+## License
+
+This project is provided for **educational purposes**.  
+If you plan to redistribute or commercialize, add a proper license (e.g., MIT) and update this section.
+
+---
+
+## Acknowledgments
+
+- Cybersecurity community and educators who share knowledge  
+- Open‑source libraries and icon sets  
+- Learners and practitioners providing continual feedback
+
+---
+
+> **Start your cybersecurity journey with CyberGuard Academy—learn, test, and track your growth.**
